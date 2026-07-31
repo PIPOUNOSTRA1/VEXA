@@ -1545,12 +1545,16 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, border-color 0.4s ease;
   overflow: hidden;
   padding: 1.75rem;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Layer 1: Wireframe */
 .layer-wireframe {
   background: rgba(10, 10, 15, 0.95);
   border-color: rgba(168, 85, 247, 0.3);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .wf-grid-lines {
@@ -1682,14 +1686,15 @@ h1, h2, h3, h4, h5, h6 {
 /* Dynamic Storytelling Text Overlays */
 .scrolly-text-container {
   position: absolute;
-  bottom: 50px;
+  bottom: 45px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 30;
+  z-index: 35;
   text-align: center;
   max-width: 780px;
   width: 90%;
   pointer-events: none;
+  height: 120px;
 }
 
 .scrolly-scene-text {
@@ -1700,12 +1705,14 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s ease;
+  display: none;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease;
 }
 
 .scrolly-scene-text.active {
   opacity: 1;
   visibility: visible;
+  display: block;
   transform: translateX(-50%) translateY(0);
   pointer-events: auto;
 }
