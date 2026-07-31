@@ -277,170 +277,189 @@
     </section>
 
     <!-- ==========================================================================
-         VEXA CINEMATIC SCROLLEYTELLING EXPERIENCE (9 SCENES)
+         VEXA CINEMATIC SCROLLEYTELLING EXPERIENCE — SPLIT LAYOUT (9 SCENES)
          ========================================================================== -->
-    <section class="vexa-scrolly-section" id="vexa-cinematic-scrollytelling">
+    <section class="vexa-scrolly-section" id="vexa-cinematic-scrollytelling" dir="ltr">
       <div class="vexa-scrolly-sticky">
-        
-        <!-- Ambient Particles & Glow Background -->
+
+        <!-- AMBIENT GLOW BG -->
         <div class="scrolly-ambient-bg">
           <div class="glow-orb orb-purple"></div>
           <div class="glow-orb orb-emerald"></div>
-          <div class="glow-orb orb-gold"></div>
         </div>
 
-        <!-- Top Progress Indicator -->
-        <div class="scrolly-progress-hud">
-          <div class="scrolly-step-badge" id="scrolly-current-step">SCENE 01 / 09 — THE IDEA</div>
+        <!-- HUD Progress Bar -->
+        <div class="scrolly-hud-top">
+          <span class="scrolly-step-badge" id="scrolly-current-step">SCENE 01 / 09 — THE IDEA</span>
           <div class="scrolly-hud-bar"><div class="hud-fill" id="scrolly-hud-fill"></div></div>
         </div>
 
-        <!-- 3D VEXA STORE EXPLODED VIEW CONTAINER -->
-        <div class="scrolly-3d-stage">
-          <div class="store-3d-cube" id="store-3d-master">
-            
-            <!-- Layer 1: Base Grid & Wireframe Blueprint -->
-            <div class="store-layer layer-wireframe" id="layer-wf">
-              <div class="wf-grid-lines"></div>
-              <div class="wf-box wf-nav"></div>
-              <div class="wf-box wf-hero"></div>
-              <div class="wf-box wf-products"></div>
-              <div class="wf-box wf-form"></div>
+        <!-- SPLIT LAYOUT WRAPPER -->
+        <div class="scrolly-split-wrap">
+
+          <!-- LEFT: Text Column (9 stacked scenes, only 1 visible) -->
+          <div class="scrolly-text-col">
+
+            <div class="scrolly-scene-text active" id="text-scene-1">
+              <div class="scene-step-tag">01 — الفكرة</div>
+              <h2 class="scene-headline">كل متجر ناجح<br>يبدأ بفكرة...</h2>
+              <p class="scene-desc">شرارة الإبداع الأولى التي تتحول معنا إلى إمبراطورية تجارية متكاملة.</p>
             </div>
 
-            <!-- Layer 2: High-End Glassmorphism UI -->
-            <div class="store-layer layer-ui" id="layer-ui">
-              <div class="ui-mockup-header">
-                <div class="ui-dot red"></div><div class="ui-dot yellow"></div><div class="ui-dot green"></div>
-                <span class="ui-url">https://vexa-store.com</span>
-              </div>
-              <div class="ui-hero-banner">
-                <div class="ui-badge">VEXA E-COMMERCE</div>
-                <div class="ui-title">متجر الساعات الملكية الذهبية</div>
-                <button class="ui-btn-glow">اطلب الآن COD ↗</button>
-              </div>
+            <div class="scrolly-scene-text" id="text-scene-2">
+              <div class="scene-step-tag">02 — الهيكل التكتيكي</div>
+              <h2 class="scene-headline">رسم الـ Wireframe<br>خطوة بخطوة</h2>
+              <p class="scene-desc">هيكلة الهندسة العكسية لتنقل الزبون ووصوله السريع لزر الشراء.</p>
             </div>
 
-            <!-- Layer 3: 3D Product & Assets -->
-            <div class="store-layer layer-assets" id="layer-assets">
-              <div class="asset-card asset-img1"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80" alt="Watch Mockup"></div>
-              <div class="asset-card asset-img2"><img src="nawa-hero-real.png" alt="Beauty Product"></div>
+            <div class="scrolly-scene-text" id="text-scene-3">
+              <div class="scene-step-tag">03 — التصميم الفاخر</div>
+              <h2 class="scene-headline">واجهة سينمائية<br>بتأثير الزجاج الفاخر</h2>
+              <p class="scene-desc">إلباس الهيكل ثوباً سينمائياً يجبر الزائر على الاحترام والثقة.</p>
             </div>
 
-            <!-- Layer 4: Marketing Copy & Badges -->
-            <div class="store-layer layer-marketing" id="layer-marketing">
-              <div class="mkt-pill pill-guarantee">🛡️ ضمان 100% تسليم 5 أيام</div>
-              <div class="mkt-pill pill-offer">🔥 خصم 30% لليوم فقط</div>
-              <div class="mkt-pill pill-review">⭐⭐⭐⭐⭐ "+150% مبيعات"</div>
+            <div class="scrolly-scene-text" id="text-scene-4">
+              <div class="scene-step-tag">04 — التفكيك ثلاثي الأبعاد</div>
+              <h2 class="scene-headline">Exploded View:<br>هندسة طبقات المتجر</h2>
+              <p class="scene-desc">شاهد كيف تتكامل جميع طبقات المتجر معاً لتشكل منظومة البيع المكتملة.</p>
             </div>
 
-            <!-- Layer 5: Tracking Pixels Nodes -->
-            <div class="store-layer layer-pixels" id="layer-pixels">
-              <div class="pixel-node node-meta"><span>Meta Pixel</span> <div class="pulse"></div></div>
-              <div class="pixel-node node-tiktok"><span>TikTok Pixel</span> <div class="pulse"></div></div>
-              <div class="pixel-node node-snap"><span>Snap Pixel</span> <div class="pulse"></div></div>
-              <div class="pixel-node node-ga4"><span>GA4 Event</span> <div class="pulse"></div></div>
+            <div class="scrolly-scene-text" id="text-scene-5">
+              <div class="scene-step-tag">05 — هندسة الإقناع</div>
+              <h2 class="scene-headline">نصوص تسويقية<br>تصنع رغبة الشراء</h2>
+              <p class="scene-desc">صياغة عروض الحزم والضمانات التي تزيل كل تردد عند الزائر.</p>
             </div>
 
-            <!-- Layer 6: Logistics & 58 Wilayas COD Form -->
-            <div class="store-layer layer-cod" id="layer-cod">
-              <div class="cod-form-box">
-                <div class="cod-title">🚚 نموذج الطلب لـ 58 ولاية</div>
-                <div class="cod-field">الاسم واللقب: محمد علي</div>
-                <div class="cod-field">الولاية: 16 — الجزائر العاصمة</div>
-                <div class="cod-submit">تأكيد الطلب والدفع عند الاستلام ✓</div>
-              </div>
+            <div class="scrolly-scene-text" id="text-scene-6">
+              <div class="scene-step-tag">06 — البيكسل والربط</div>
+              <h2 class="scene-headline">تتبع رباعي الذكاء:<br>Meta — TikTok — Snap — GA4</h2>
+              <p class="scene-desc">تغذية الخوارزميات بحوادث المبيعات الحقيقية لأقل تكلفة إعلانية.</p>
             </div>
 
-            <!-- Layer 7: Real-Time Analytics Dashboard -->
-            <div class="store-layer layer-analytics" id="layer-analytics">
-              <div class="dash-chart-card">
-                <div class="dash-val">$14,850 USD</div>
-                <div class="dash-label">المبيعات الإجمالية (+180%)</div>
-                <div class="dash-bars"><span style="height:40%"></span><span style="height:65%"></span><span style="height:85%"></span><span style="height:100%"></span></div>
-              </div>
+            <div class="scrolly-scene-text" id="text-scene-7">
+              <div class="scene-step-tag">07 — اللوجستيات</div>
+              <h2 class="scene-headline">نظام التوصيل COD<br>لـ 58 ولاية جزائرية</h2>
+              <p class="scene-desc">نموذج طلب سريع يحسب أسعار الشحن تلقائياً لجميع البلديات.</p>
+            </div>
+
+            <div class="scrolly-scene-text" id="text-scene-8">
+              <div class="scene-step-tag">08 — النتائج والأرباح</div>
+              <h2 class="scene-headline">مبيعات متصاعدة<br>ونسبة تحويل +150%</h2>
+              <p class="scene-desc">شاهد أرباحك تنمو مع مؤشرات الأداء الحية ولوحة التحليلات اللحظية.</p>
+            </div>
+
+            <div class="scrolly-scene-text" id="text-scene-9">
+              <div class="scene-step-tag">09 — الإطلاق الكامل</div>
+              <h2 class="scene-headline">من الفكرة...<br>إلى أول عملية بيع 🚀</h2>
+              <p class="scene-desc">متجرك مكتمل ومجهز 100% للانطلاق في 5 أيام عمل فقط.</p>
+              <a href="contact.html" class="scrolly-cta-btn" dir="rtl">ابدأ مشروعك اليوم ←</a>
             </div>
 
           </div>
-        </div>
 
-        <!-- DYNAMIC STORYTELLING TEXT OVERLAYS (9 SCENES) -->
-        <div class="scrolly-text-container">
-          
-          <!-- Scene 01 -->
-          <div class="scrolly-scene-text active" id="text-scene-1">
-            <div class="scene-step-tag">01. الفكرة النيرة</div>
-            <h2 class="scene-headline">كل متجر ناجح يبدأ بفكرة...</h2>
-            <p class="scene-desc">شرارة الإبداع الأولى التي تتحول معنا إلى إمبراطورية تجارية متكاملة.</p>
-          </div>
+          <!-- RIGHT: 3D Store Visual Column -->
+          <div class="scrolly-visual-col">
+            <div class="scrolly-3d-stage">
+              <div class="store-3d-cube" id="store-3d-master">
 
-          <!-- Scene 02 -->
-          <div class="scrolly-scene-text" id="text-scene-2">
-            <div class="scene-step-tag">02. التخطيط والتنفيذ</div>
-            <h2 class="scene-headline">رسم الهيكل التكتيكي والـ Wireframe</h2>
-            <p class="scene-desc">هيكلة الهندسة العكسية لتنقل الزبون وسهولة وصوله لزر الشراء بدون عوائق.</p>
-          </div>
+                <!-- Layer 1: Wireframe Blueprint -->
+                <div class="store-layer layer-wireframe" id="layer-wf">
+                  <div class="wf-grid-lines"></div>
+                  <div class="wf-label">[ NAV ]</div>
+                  <div class="wf-box wf-nav"></div>
+                  <div class="wf-box wf-hero">
+                    <div class="wf-inner-tag">HERO / CTA</div>
+                  </div>
+                  <div class="wf-box wf-products">
+                    <div class="wf-inner-tag">PRODUCTS</div>
+                  </div>
+                  <div class="wf-box wf-form">
+                    <div class="wf-inner-tag">COD FORM</div>
+                  </div>
+                </div>
 
-          <!-- Scene 03 -->
-          <div class="scrolly-scene-text" id="text-scene-3">
-            <div class="scene-step-tag">03. الهوية والتصميم</div>
-            <h2 class="scene-headline">واجهة فاخرة بتأثيرات الزجاج والموشحات</h2>
-            <p class="scene-desc">إلباس الهيكل ثوباً سينمائياً فائقا الجاذبية يجبر الزائر على الاحترام والثقة.</p>
-          </div>
+                <!-- Layer 2: Glassmorphic UI -->
+                <div class="store-layer layer-ui" id="layer-ui">
+                  <div class="ui-mockup-header">
+                    <div class="ui-dot red"></div><div class="ui-dot yellow"></div><div class="ui-dot green"></div>
+                    <span class="ui-url">vexa-store.myshopify.com</span>
+                  </div>
+                  <div class="ui-hero-banner">
+                    <div class="ui-badge">★ VEXA E-COMMERCE STORE</div>
+                    <div class="ui-title">متجر الساعات الملكية الذهبية</div>
+                    <div class="ui-price">4,990 DA <span style="text-decoration:line-through;color:#888;font-size:0.85rem;">7,500 DA</span></div>
+                    <button class="ui-btn-glow">اطلب الآن — الدفع عند الاستلام ↗</button>
+                  </div>
+                </div>
 
-          <!-- Scene 04 -->
-          <div class="scrolly-scene-text" id="text-scene-4">
-            <div class="scene-step-tag">04. التفكيك ثلاثي الأبعاد</div>
-            <h2 class="scene-headline">Exploded View: هندسة طبقات المتجر</h2>
-            <p class="scene-desc">شاهد كيف تتكامل جميع طبقات المتجر المخصصة معاً من البكسل وحتى تجربة المستخدم.</p>
-          </div>
+                <!-- Layer 3: Product Images -->
+                <div class="store-layer layer-assets" id="layer-assets">
+                  <div class="asset-card asset-img1">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80" alt="Watch">
+                  </div>
+                  <div class="asset-card asset-img2">
+                    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=600&q=80" alt="Perfume">
+                  </div>
+                </div>
 
-          <!-- Scene 05 -->
-          <div class="scrolly-scene-text" id="text-scene-5">
-            <div class="scene-step-tag">05. هندسة الإقناع</div>
-            <h2 class="scene-headline">نصوص تسويقية تصنع رغبة الشراء الحقيقية</h2>
-            <p class="scene-desc">صياغة عروض الحزم والتوفير (Bundles) والضمانات التي تزيل التردد.</p>
-          </div>
+                <!-- Layer 4: Marketing Badges -->
+                <div class="store-layer layer-marketing" id="layer-marketing">
+                  <div class="mkt-pill pill-guarantee">🛡️ ضمان 100% — تسليم 5 أيام</div>
+                  <div class="mkt-pill pill-offer">🔥 خصم 30% — لهذا اليوم فقط</div>
+                  <div class="mkt-pill pill-review">⭐⭐⭐⭐⭐ &quot;زاد رقم مبيعاتي +150%&quot;</div>
+                </div>
 
-          <!-- Scene 06 -->
-          <div class="scrolly-scene-text" id="text-scene-6">
-            <div class="scene-step-tag">06. البيكسل والربط الذكي</div>
-            <h2 class="scene-headline">تتبع رباعي الذكاء لـ Meta, TikTok, Snap & GA4</h2>
-            <p class="scene-desc">تغذية خوارزميات الإعلانات بحوادث المبيعات الحقيقية للحصول على أقل تكلفة مبيعات.</p>
-          </div>
+                <!-- Layer 5: Pixel Nodes -->
+                <div class="store-layer layer-pixels" id="layer-pixels">
+                  <div class="pixel-node node-meta"><div class="pulse"></div><span>Meta Pixel</span></div>
+                  <div class="pixel-node node-tiktok"><div class="pulse"></div><span>TikTok Pixel</span></div>
+                  <div class="pixel-node node-snap"><div class="pulse"></div><span>Snap Pixel</span></div>
+                  <div class="pixel-node node-ga4"><div class="pulse"></div><span>GA4 Events</span></div>
+                </div>
 
-          <!-- Scene 07 -->
-          <div class="scrolly-scene-text" id="text-scene-7">
-            <div class="scene-step-tag">07. اللوجستيات والشحن</div>
-            <h2 class="scene-headline">نظام التوصيل التلقائي لـ 58 ولاية COD</h2>
-            <p class="scene-desc">نموذج طلب سريع وسلس يحسب أسعار الشحن تلقائياً لجميع البلديات.</p>
-          </div>
+                <!-- Layer 6: COD Logistics -->
+                <div class="store-layer layer-cod" id="layer-cod">
+                  <div class="cod-form-box">
+                    <div class="cod-title">🚚 نموذج الطلب — 58 ولاية</div>
+                    <div class="cod-field">الاسم الكامل: محمد بن علي</div>
+                    <div class="cod-field">الولاية: 16 — الجزائر العاصمة</div>
+                    <div class="cod-field">رقم الهاتف: 0555 XX XX XX</div>
+                    <div class="cod-submit">✓ تأكيد الطلب — الدفع عند الاستلام</div>
+                  </div>
+                </div>
 
-          <!-- Scene 08 -->
-          <div class="scrolly-scene-text" id="text-scene-8">
-            <div class="scene-step-tag">08. حصاد النتائج</div>
-            <h2 class="scene-headline">مبيعات متصاعدة ونسبة تحويل +150%</h2>
-            <p class="scene-desc">شاهد أرباحك تنمو ومؤشرات الأداء ترتفع بفضل النظام المتكامل المكتمل.</p>
-          </div>
+                <!-- Layer 7: Analytics Dashboard -->
+                <div class="store-layer layer-analytics" id="layer-analytics">
+                  <div class="dash-chart-card">
+                    <div class="dash-val">$14,850</div>
+                    <div class="dash-label">المبيعات الإجمالية ↑ +180%</div>
+                    <div class="dash-bars">
+                      <span style="height:35%"></span>
+                      <span style="height:55%"></span>
+                      <span style="height:72%"></span>
+                      <span style="height:88%"></span>
+                      <span style="height:100%"></span>
+                    </div>
+                    <div class="dash-stats-row">
+                      <span>CR: <b style="color:#10B981">3.8%</b></span>
+                      <span>Orders: <b style="color:#D4A359">248</b></span>
+                    </div>
+                  </div>
+                </div>
 
-          <!-- Scene 09 -->
-          <div class="scrolly-scene-text" id="text-scene-9">
-            <div class="scene-step-tag">09. الإطلاق والجاهزية</div>
-            <h2 class="scene-headline">من الفكرة... إلى أول عملية بيع 🚀</h2>
-            <p class="scene-desc">متجرك مكتمل ومجهز 100% للانطلاق في 5 أيام عمل فقط.</p>
-            <div style="margin-top:1.25rem;">
-              <a href="contact.html" class="btn btn-primary" style="padding:0.9rem 2.5rem; background:#A855F7; border:none; color:#FFF; font-weight:900; box-shadow:0 0 35px rgba(168,85,247,0.5); text-decoration:none;">
-                ابدأ مشروعك اليوم ←
-              </a>
-            </div>
-          </div>
+              </div><!-- end store-3d-cube -->
+            </div><!-- end scrolly-3d-stage -->
+          </div><!-- end scrolly-visual-col -->
 
-        </div>
+        </div><!-- end scrolly-split-wrap -->
 
-      </div>
+      </div><!-- end vexa-scrolly-sticky -->
     </section>
 
+
+
     <!-- FULL TURNKEY SERVICE 8 PILLARS SHOWCASE -->
+
     <section class="container" id="full-turnkey-details">
       <div class="turnkey-service-section">
         
