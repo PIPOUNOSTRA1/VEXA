@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAWQED Specialty Coffee — Salla E-Commerce Case Study | VEXA Studio</title>
+  <meta name="description" content="Official Behance Master Case Study Showcase for MAWQED Specialty Coffee & Roastery. Salla platform e-commerce design, real product photography, interactive flavor guide, and Saudi checkout.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Space+Grotesk:wght@500;700&family=Syne:wght@700;800&display=swap');
+
+    body {
+      background-color: #020203;
+      color: #FFFFFF;
+      font-family: 'Cairo', var(--font-body), sans-serif;
+      overflow-x: hidden;
+    }
+
+    .accent-coffee {
+      color: #D4A359;
+    }
+
+    .bg-coffee-glow {
+      background: radial-gradient(circle at 50% 30%, rgba(212, 163, 89, 0.15) 0%, rgba(2, 2, 3, 1) 75%);
+    }
+
+    .full-hero {
+      min-height: 95vh;
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 9rem 2rem 5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+    }
+
+    .keynote-block {
+      width: 100%;
+      max-width: 1400px;
+      margin: 5rem auto;
+      padding: 0 2rem;
+    }
+
+    .keynote-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #D4A359;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .keynote-heading {
+      font-family: 'Syne', 'Cairo', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: #FFFFFF;
+    }
+
+    .real-photo-hero-frame {
+      width: 100%;
+      height: 650px;
+      border-radius: 28px;
+      border: 1px solid rgba(212, 163, 89, 0.3);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 40px 120px rgba(0, 0, 0, 0.95);
+      margin: 2.5rem 0;
+    }
+
+    .real-photo-hero-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7) contrast(1.1);
+    }
+
+    .hero-overlay-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 4rem 3rem;
+      background: linear-gradient(to top, rgba(2,2,3,0.95) 0%, rgba(2,2,3,0.4) 60%, rgba(2,2,3,0) 100%);
+      text-align: right;
+    }
+
+    .metrics-bar {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .metric-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(212, 163, 89, 0.2);
+      border-radius: 16px;
+      padding: 1.25rem 2.5rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .metric-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #D4A359;
+    }
+
+    .metric-lbl {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    /* Product Photo Grid */
+    .real-product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .product-photo-card {
+      background: #09080A;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .product-photo-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(212, 163, 89, 0.5);
+      box-shadow: 0 25px 60px rgba(212, 163, 89, 0.2);
+    }
+
+    .product-photo-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .product-photo-card:hover .product-photo-img {
+      transform: scale(1.05);
+    }
+
+    .product-photo-info {
+      padding: 2rem;
+    }
+
+    .coffee-tag {
+      display: inline-block;
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: rgba(212, 163, 89, 0.15);
+      color: #D4A359;
+      border: 1px solid rgba(212, 163, 89, 0.3);
+      margin-bottom: 1rem;
+    }
+
+    .coffee-price {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #D4A359;
+      float: left;
+    }
+
+    /* Flavor Guide Tabs */
+    .flavor-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .flavor-tab-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      padding: 0.85rem 1.8rem;
+      border-radius: 50px;
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .flavor-tab-btn.active, .flavor-tab-btn:hover {
+      background: #D4A359;
+      color: #000000;
+      border-color: #D4A359;
+      box-shadow: 0 0 25px rgba(212, 163, 89, 0.4);
+    }
+
+    .coffee-notes {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .note-badge {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: #E2E8F0;
+    }
+
+    /* Gateway Grid */
+    .gateway-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gateway-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #FFFFFF;
+      transition: all 0.3s ease;
+    }
+
+    .gateway-pill:hover {
+      border-color: #D4A359;
+      background: rgba(212, 163, 89, 0.08);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="brand-logo">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="white"/>
+        <path d="M8 10L16 22L24 10" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      VEXA
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+      <li><a href="services.html" class="nav-link">الخدمات</a></li>
+      <li><a href="about.html" class="nav-link">عن الوكالة</a></li>
+      <li><a href="pricing.html" class="nav-link">الأسعار</a></li>
+      <li><a href="blog.html" class="nav-link">المدونة</a></li>
+      <li><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="contact.html" class="btn btn-primary">احجز مكالمة استشارية</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section with REAL High-Res Photography -->
+  <header class="full-hero bg-coffee-glow">
+    <div class="badge" style="border-color: rgba(212, 163, 89, 0.4); background: rgba(212, 163, 89, 0.1);">
+      <span class="badge-dot" style="background: #D4A359;"></span> 
+      دراسة حالة متجر سلة SALLA E-COMMERCE SHOWCASE
+    </div>
+    
+    <h1 class="keynote-heading" style="margin-top: 1.5rem; max-width: 1000px;">
+      متجر موقد للقهوة المختصة <br><span class="accent-coffee">MAWQED SPECIALTY COFFEE & ROASTERY</span>
+    </h1>
+
+    <p style="font-size: 1.25rem; color: #94A3B8; max-width: 750px; margin: 0 auto; line-height: 1.7;">
+      هندسة وتصميم متجر إلكتروني فاخر مع صور ومنتجات حقيقية عالية الدقة على منصة سلة (Salla) موجه للسوق السعودي ودول الخليج.
+    </p>
+
+    <!-- Metrics Bar -->
+    <div class="metrics-bar">
+      <div class="metric-box">
+        <div class="metric-val">+168%</div>
+        <div class="metric-lbl">ارتفاع نسبة التحويل (CR)</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val">4.2x</div>
+        <div class="metric-lbl">عائد الإعلانات (ROAS)</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val">0.65s</div>
+        <div class="metric-lbl">سرعة التحميل على الجوال</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val">24-48h</div>
+        <div class="metric-lbl">سرعة التوصيل اللوجستي</div>
+      </div>
+    </div>
+
+    <!-- Main REAL Photo Hero Banner -->
+    <div class="keynote-block" style="margin-top: 4rem;">
+      <div class="real-photo-hero-frame">
+        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=1600&q=85" alt="Mawqed Coffee Roastery & Pour Over Bar">
+        <div class="hero-overlay-content">
+          <span class="coffee-tag">محمصة وتجارة إلكترونية متخصصة</span>
+          <h2 style="font-size: 2.8rem; font-weight: 900; color: #FFF; margin-bottom: 0.5rem;">موقد — حيث تبدأ حكاية القهوة</h2>
+          <p style="font-size: 1.2rem; color: #D4A359; max-width: 700px; line-height: 1.6;">
+            حبوب قهوة مختصة عالية الجودة، تحميص أسبوعي طازج، وأدوات تقطير احترافية شحن سريع لكافة مناطق المملكة.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Real Product Photography Section: Specialty Coffee Beans -->
+  <section class="keynote-block">
+    <div class="keynote-label">
+      <span>✦</span> REAL PRODUCT PHOTOGRAPHY — COFFEE BEANS
+    </div>
+    <h2 class="keynote-heading">محاصيل حبوب القهوة المختصة</h2>
+    <p style="color: #94A3B8; font-size: 1.1rem; max-width: 700px; margin-bottom: 2.5rem;">
+      استعراض المنتجات الحقيقية المصورة فوتوغرافياً داخل متجر موقد لمنصة سلة مع تفاصيل كل محصول وإيحاءاته.
+    </p>
+
+    <!-- Tabs Filter -->
+    <div class="flavor-tabs">
+      <button class="flavor-tab-btn active" onclick="filterFlavor('all')">جميع المحاصيل</button>
+      <button class="flavor-tab-btn" onclick="filterFlavor('fruity')">🍓 إيحاءات فاكهية وحمضية</button>
+      <button class="flavor-tab-btn" onclick="filterFlavor('balanced')">🍫 إيحاءات متوازنة وشوكولاتة</button>
+      <button class="flavor-tab-btn" onclick="filterFlavor('dark')">☕ مرارة مرتفعة ومحامص غامقة</button>
+    </div>
+
+    <!-- Product Grid with REAL High-Quality Images -->
+    <div class="real-product-grid" id="flavorGrid">
+
+      <!-- Item 1 -->
+      <div class="product-photo-card" data-flavor="fruity">
+        <img src="https://images.unsplash.com/photo-1589396575653-c09c794ff6a6?auto=format&fit=crop&w=800&q=80" alt="إثيوبيا قوجي" class="product-photo-img">
+        <div class="product-photo-info">
+          <span class="coffee-price">78 SAR</span>
+          <span class="coffee-tag">معالجة مجففة • إثيوبيا</span>
+          <h3 style="font-size: 1.5rem; font-weight: 800; color: #FFF; margin-bottom: 0.5rem;">إثيوبيا قوجي (Guji Natural)</h3>
+          <p style="color: #94A3B8; font-size: 0.95rem; line-height: 1.6;">إيحاءات بارزة من الخوخ والياسمين وحلاوة العسل العالية مع حمضية فاكهية متوازنة.</p>
+          <div class="coffee-notes">
+            <span class="note-badge">🍑 خوخ</span>
+            <span class="note-badge">🌸 ياسمين</span>
+            <span class="note-badge">🍯 عسل</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="product-photo-card" data-flavor="balanced">
+        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" alt="كولومبيا جيشا" class="product-photo-img">
+        <div class="product-photo-info">
+          <span class="coffee-price">95 SAR</span>
+          <span class="coffee-tag">معالجة مغسولة • كولومبيا</span>
+          <h3 style="font-size: 1.5rem; font-weight: 800; color: #FFF; margin-bottom: 0.5rem;">كولومبيا جيشا (Geisha Washed)</h3>
+          <p style="color: #94A3B8; font-size: 0.95rem; line-height: 1.6;">قوام متوسط مع إيحاءات الشوكولاتة الداكنة والمكسرات المحمصة وحلاوة الكاراميل.</p>
+          <div class="coffee-notes">
+            <span class="note-badge">🍫 شوكولاتة داكنة</span>
+            <span class="note-badge">🌰 بندق</span>
+            <span class="note-badge">🍮 كاراميل</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="product-photo-card" data-flavor="dark">
+        <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=800&q=80" alt="خلطة موقد الماستر" class="product-photo-img">
+        <div class="product-photo-info">
+          <span class="coffee-price">65 SAR</span>
+          <span class="coffee-tag">تحميص غامق • خلطة إسبريسو</span>
+          <h3 style="font-size: 1.5rem; font-weight: 800; color: #FFF; margin-bottom: 0.5rem;">خلطة موقد الماستر (Mawqed Dark Blend)</h3>
+          <p style="color: #94A3B8; font-size: 0.95rem; line-height: 1.6;">حمضية منخفضة وقوام ثقيل مع مرارة غنية وإيحاءات الكاكاو الخام والمكسرات.</p>
+          <div class="coffee-notes">
+            <span class="note-badge">☕ كاكاو خام</span>
+            <span class="note-badge">🥜 لوز محمض</span>
+            <span class="note-badge">إسبريسو ثقيل</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Real Product Photography Section: Barista Tools & Equipment -->
+  <section class="keynote-block" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 32px; padding: 4rem 3rem;">
+    <div class="keynote-label">
+      <span>✦</span> REAL PRODUCT PHOTOGRAPHY — BARISTA TOOLS
+    </div>
+    <h2 class="keynote-heading">معدات ومستلزمات التحضير والباريستا الحقيقية</h2>
+    <p style="color: #94A3B8; font-size: 1.1rem; max-width: 700px; margin-bottom: 3rem;">
+      صور فوتوغرافية حقيقية لأدوات التقطير والغلايات الحرارية وأكواب القهوة المعروضة في المتجر.
+    </p>
+
+    <div class="real-product-grid">
+
+      <!-- Tool 1: Chemex -->
+      <div class="product-photo-card">
+        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80" alt="كيمكس زجاجي" class="product-photo-img">
+        <div class="product-photo-info">
+          <span class="coffee-price">185 SAR</span>
+          <h3 style="font-size: 1.3rem; font-weight: 800; color: #FFF;">قدر كيمكس الزجاجي (Chemex)</h3>
+          <p style="color: #94A3B8; font-size: 0.9rem; margin-top: 0.5rem;">زجاج البوروسيلكات المقاوم للحرارة مع طوق خشب الجوز المربوط بالجلد الطبيعي.</p>
+        </div>
+      </div>
+
+      <!-- Tool 2: V60 & Pour Over -->
+      <div class="product-photo-card">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="قمع V60 سيراميك" class="product-photo-img">
+        <div class="product-photo-info">
+          <span class="coffee-price">120 SAR</span>
+          <h3 style="font-size: 1.3rem; font-weight: 800; color: #FFF;">قمع V60 سيراميك اليابان</h3>
+          <p style="color: #94A3B8; font-size: 0.9rem; margin-top: 0.5rem;">قمع تقطير حلزوني احترافي مصمم للاستخلاص المتساوي وتجربة كوب ناعمة.</p>
+        </div>
+      </div>
+
+      <!-- Tool 3: Brewista Kettle -->
+      <div class="product-photo-card">
+        <img src="https://images.unsplash.com/photo-1509785307050-d4066910ec1e?auto=format&fit=crop&w=800&q=80" alt="غلاية برويستا الذكية" class="product-photo-img">
+        <div class="product-photo-info">
+          <span class="coffee-price">490 SAR</span>
+          <h3 style="font-size: 1.3rem; font-weight: 800; color: #FFF;">غلاية برويستا الذكية</h3>
+          <p style="color: #94A3B8; font-size: 0.9rem; margin-top: 0.5rem;">تحكم دقيق بالحرارة مع عنق البجعة النحيف المخصص للتقطير الدقيق.</p>
+        </div>
+      </div>
+
+      <!-- Tool 4: Espresso Cup & Portafilter -->
+      <div class="product-photo-card">
+        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80" alt="بورتافلتر TACHE الخشبي" class="product-photo-img">
+        <div class="product-photo-info">
+          <span class="coffee-price">260 SAR</span>
+          <h3 style="font-size: 1.3rem; font-weight: 800; color: #FFF;">بورتافلتر TACHE الخشبي</h3>
+          <p style="color: #94A3B8; font-size: 0.9rem; margin-top: 0.5rem;">مقاس 58mm مكشوف بمقبض من خشب الجوز الطبيعي لمكائن E61 وستراتا.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Integrated Gateways & Logistics -->
+  <section class="keynote-block">
+    <div class="keynote-label">
+      <span>✦</span> SAUDI & GCC E-COMMERCE INTEGRATION
+    </div>
+    <h2 class="keynote-heading">تكامل بوابات الدفع والشحن لمنصة سلة</h2>
+    <p style="color: #94A3B8; font-size: 1.1rem; max-width: 750px; margin-bottom: 2rem;">
+      تم ربط المتجر بأعلى معايير الدفع الإلكتروني والتقسيط لتسهيل تجربة الشراء بضغطة واحدة داخل المملكة العربية السعودية ودول مجلس التعاون.
+    </p>
+
+    <div class="gateway-grid">
+      <div class="gateway-pill">💳 مدى Mada</div>
+      <div class="gateway-pill">🍏 Apple Pay</div>
+      <div class="gateway-pill">💳 Visa / MasterCard</div>
+      <div class="gateway-pill">🛍️ تاباي Tabby</div>
+      <div class="gateway-pill">✨ تمارا Tamara</div>
+      <div class="gateway-pill">💎 ميس باي Mispay</div>
+    </div>
+  </section>
+
+  <!-- Footer CTA Section -->
+  <footer style="background: #060507; border-top: 1px solid rgba(255,255,255,0.08); padding: 5rem 2rem; text-align: center; margin-top: 8rem;">
+    <div class="container" style="max-width: 900px; margin: 0 auto;">
+      <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 1.5rem; color: #FFFFFF;">
+        جاهز لتطوير متجرك الإلكتروني على منصة سلة أو منصة مخصصة؟
+      </h2>
+      <p style="color: #94A3B8; font-size: 1.1rem; margin-bottom: 2.5rem;">
+        تحدث مباشرة مع فريق VEXA Studio لتصميم تجربة تسوق استثنائية تزيد من مبيعاتك وعائد إعلاناتك.
+      </p>
+      <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">احجز جلسة استراتيجية مجانية ←</a>
+        <a href="projects.html" class="btn btn-secondary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">استعرض بقية المشاريع ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simple JS Filter Script -->
+  <script>
+    function filterFlavor(category) {
+      const buttons = document.querySelectorAll('.flavor-tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const cards = document.querySelectorAll('.coffee-card, .product-photo-card');
+      cards.forEach(card => {
+        const flavor = card.getAttribute('data-flavor');
+        if (!flavor || category === 'all' || flavor === category) {
+          card.style.display = 'block';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '0';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark Luxury Background -->
+  <rect width="1200" height="675" fill="#050608"/>
+  <circle cx="600" cy="337" r="350" fill="#10B981" fill-opacity="0.12" filter="blur(90px)"/>
+
+  <!-- Magazine Typography Backplate -->
+  <text x="600" y="120" font-family="sans-serif" font-weight="900" font-size="70" fill="rgba(255,255,255,0.05)" text-anchor="middle" letter-spacing="8">AURA BOTANICA</text>
+  <text x="600" y="200" font-family="sans-serif" font-weight="900" font-size="70" fill="rgba(255,255,255,0.05)" text-anchor="middle" letter-spacing="8">ISSUE 2026</text>
+
+  <!-- MacBook Pro Mockup Frame Center -->
+  <g filter="drop-shadow(0px 30px 60px rgba(0,0,0,0.9))">
+    <rect x="220" y="90" width="760" height="460" rx="20" fill="#12131C" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+    <rect x="240" y="110" width="720" height="420" rx="10" fill="#0A0B0E"/>
+
+    <!-- UI Store Navbar -->
+    <rect x="270" y="130" width="90" height="14" rx="4" fill="#FFFFFF"/>
+    <rect x="380" y="132" width="50" height="10" rx="3" fill="#71717A"/>
+    <rect x="445" y="132" width="50" height="10" rx="3" fill="#71717A"/>
+    <rect x="510" y="132" width="50" height="10" rx="3" fill="#71717A"/>
+    <rect x="880" y="126" width="60" height="22" rx="11" fill="#10B981"/>
+
+    <!-- UI Store Hero Content -->
+    <text x="270" y="210" font-family="sans-serif" font-weight="800" font-size="28" fill="#FFFFFF">AURA BOTANICA — ORGANIC ELIXIR</text>
+    <text x="270" y="240" font-family="sans-serif" font-size="13" fill="#A1A1AA">100% Pure Cold-Pressed Serum & Skin Diagnostics</text>
+    <rect x="270" y="265" width="140" height="38" rx="19" fill="#10B981"/>
+    <text x="340" y="289" font-family="sans-serif" font-weight="bold" font-size="12" fill="#000000" text-anchor="middle">SHOP ROUTINE →</text>
+  </g>
+
+  <!-- 3D Floating Glass Serum Bottle -->
+  <g filter="drop-shadow(0px 40px 70px rgba(0,0,0,0.95))">
+    <rect x="620" y="170" width="160" height="260" rx="24" fill="#16261D" stroke="#10B981" stroke-width="3"/>
+    <rect x="670" y="125" width="60" height="45" rx="8" fill="#E4E4E7"/>
+    <text x="700" y="290" font-family="sans-serif" font-weight="800" font-size="22" fill="#FFFFFF" text-anchor="middle">AURA</text>
+    <text x="700" y="315" font-family="sans-serif" font-weight="bold" font-size="11" fill="#10B981" text-anchor="middle">SERUM 50ML</text>
+  </g>
+
+  <!-- iPhone 15 Pro Mockup Left Overlay -->
+  <g filter="drop-shadow(0px 30px 60px rgba(0,0,0,0.95))">
+    <rect x="120" y="240" width="170" height="330" rx="28" fill="#1C1D26" stroke="#FFFFFF" stroke-width="3"/>
+    <rect x="130" y="250" width="150" height="310" rx="20" fill="#08090C"/>
+    <rect x="175" y="258" width="60" height="12" rx="6" fill="#000000"/>
+    <text x="145" y="305" font-family="sans-serif" font-weight="bold" font-size="13" fill="#FFFFFF">AURA MOBILE</text>
+    <text x="145" y="325" font-family="sans-serif" font-weight="bold" font-size="12" fill="#10B981">$85.00 USD</text>
+    <rect x="145" y="345" width="120" height="120" rx="10" fill="#14241C"/>
+    <rect x="145" y="495" width="120" height="36" rx="18" fill="#FFFFFF"/>
+    <text x="205" y="518" font-family="sans-serif" font-weight="bold" font-size="11" fill="#000" text-anchor="middle">ADD TO CART</text>
+  </g>
+</svg>

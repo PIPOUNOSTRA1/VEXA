@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA Botanica — Luxury Botanical Skincare DTC Exhibition | VEXA Studio</title>
+  <meta name="description" content="Apple Keynote level visual exhibition of AURA Botanica DTC Store. 60+ full-screen visual mockups, MacBook Pro, iPhone 15 Pro, PDP zoom, 3D renders, 3D UI viewport, and packaging universe.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #020203;
+      color: #FFFFFF;
+      overflow-x: hidden;
+    }
+    
+    .full-hero {
+      min-height: 100vh;
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 30%, rgba(16, 185, 129, 0.12) 0%, rgba(2, 2, 3, 1) 75%);
+      padding: 8rem 2rem 4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .keynote-block {
+      width: 100%;
+      max-width: 1400px;
+      margin: 6rem auto;
+      padding: 0 2rem;
+    }
+
+    .keynote-label {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #10B981;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .keynote-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 2rem;
+      color: #FFFFFF;
+    }
+
+    .giant-mockup-frame {
+      width: 100%;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: #060609;
+      overflow: hidden;
+      box-shadow: 0 40px 120px rgba(0, 0, 0, 0.95);
+      margin: 2.5rem 0;
+      position: relative;
+    }
+
+    .gallery-grid-6 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .gall-item {
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #090A0E;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+      transition: transform 0.4s ease;
+    }
+
+    .gall-item:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="brand-logo">
+      <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="white"/><path d="M8 10L16 22L24 10" stroke="black" stroke-width="3.5"/></svg>
+      VEXA
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="aura-botanica-exhibition.html" class="nav-link active">AURA Keynote Exhibition</a></li>
+      <li><a href="behance.html" class="nav-link">Behance Showcase</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+    </div>
+  </nav>
+
+  <!-- 01. MASSIVE APPLE KEYNOTE HERO -->
+  <header class="full-hero">
+    <div class="badge" style="margin-bottom: 1.5rem;"><span class="badge-dot"></span> LUXURY ECOMMERCE EXHIBITION</div>
+    <h1 class="display-title" style="font-size: clamp(3.2rem, 7vw, 6.5rem); text-align: center; margin-bottom: 0.5rem;">
+      AURA BOTANICA
+    </h1>
+    <p style="font-size: 1.4rem; color: #A1A1AA; font-family: var(--font-heading); margin-bottom: 3rem;">
+      LUXURY BOTANICAL SKINCARE • ALGERIA & UAE STOREFRONT
+    </p>
+
+    <!-- GIANT KEYNOTE HERO MOCKUP: MacBook Pro + iPhone 15 Pro + Floating 3D Serum Bottle -->
+    <div style="width: 100%; max-width: 1300px; position: relative;">
+      <canvas id="aura-canvas-hero" style="width: 100%; height: 550px; border-radius: 32px; box-shadow: 0 40px 100px rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.15); background: #050608;"></canvas>
+    </div>
+  </header>
+
+  <!-- 02. MACBOOK & IPHONE SHOWCASE (SMOOTH SCROLL SHOWCASE) -->
+  <section class="keynote-block">
+    <div class="keynote-label"><span>✦</span> 01 — STOREFRONT IN ACTION</div>
+    <h2 class="keynote-heading">THE MACBOOK & IPHONE SHOWCASE</h2>
+
+    <div class="giant-mockup-frame">
+      <svg width="100%" height="600" viewBox="0 0 1200 600" fill="none">
+        <rect width="1200" height="600" fill="#08090C"/>
+        <!-- MacBook Frame -->
+        <rect x="100" y="40" width="1000" height="500" rx="24" fill="#12131C" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+        <rect x="120" y="60" width="960" height="460" rx="12" fill="#0A0B0E"/>
+        <!-- Page Layout Renders -->
+        <rect x="150" y="90" width="900" height="60" rx="8" fill="#14151F"/>
+        <rect x="150" y="170" width="560" height="320" rx="12" fill="#0F1118"/>
+        <rect x="730" y="170" width="320" height="320" rx="12" fill="#1A2822" stroke="#10B981"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 03. FULL HOMEPAGE GALLERY (6 SCREENSHOTS IN MOTION) -->
+  <section class="keynote-block">
+    <div class="keynote-label"><span>✦</span> 02 — HOMEPAGE ARCHITECTURE</div>
+    <h2 class="keynote-heading">6 FULL HOMEPAGE SECTION MOCKUPS</h2>
+
+    <div class="gallery-grid-6">
+      <div class="gall-item">
+        <svg width="100%" height="260" viewBox="0 0 400 260" fill="none">
+          <rect width="400" height="260" fill="#0A0B0E"/>
+          <text x="20" y="40" font-family="'Syne', sans-serif" font-weight="bold" font-size="16" fill="#FFF">01. HERO BANNER & QUIZ TRIGGER</text>
+          <rect x="20" y="60" width="360" height="170" rx="10" fill="#14221B" stroke="rgba(255,255,255,0.1)"/>
+        </svg>
+      </div>
+
+      <div class="gall-item">
+        <svg width="100%" height="260" viewBox="0 0 400 260" fill="none">
+          <rect width="400" height="260" fill="#0A0B0E"/>
+          <text x="20" y="40" font-family="'Syne', sans-serif" font-weight="bold" font-size="16" fill="#FFF">02. BOTANICAL INGREDIENTS</text>
+          <rect x="20" y="60" width="110" height="170" rx="10" fill="#141822"/>
+          <rect x="145" y="60" width="110" height="170" rx="10" fill="#141822"/>
+          <rect x="270" y="60" width="110" height="170" rx="10" fill="#141822"/>
+        </svg>
+      </div>
+
+      <div class="gall-item">
+        <svg width="100%" height="260" viewBox="0 0 400 260" fill="none">
+          <rect width="400" height="260" fill="#0A0B0E"/>
+          <text x="20" y="40" font-family="'Syne', sans-serif" font-weight="bold" font-size="16" fill="#FFF">03. CLINICAL BEFORE & AFTER</text>
+          <rect x="20" y="60" width="170" height="170" rx="10" fill="#1F1515"/>
+          <rect x="210" y="60" width="170" height="170" rx="10" fill="#15241C"/>
+        </svg>
+      </div>
+
+      <div class="gall-item">
+        <svg width="100%" height="260" viewBox="0 0 400 260" fill="none">
+          <rect width="400" height="260" fill="#0A0B0E"/>
+          <text x="20" y="40" font-family="'Syne', sans-serif" font-weight="bold" font-size="16" fill="#FFF">04. CUSTOMER REVIEWS GRID</text>
+          <rect x="20" y="60" width="360" height="170" rx="10" fill="#141620"/>
+        </svg>
+      </div>
+
+      <div class="gall-item">
+        <svg width="100%" height="260" viewBox="0 0 400 260" fill="none">
+          <rect width="400" height="260" fill="#0A0B0E"/>
+          <text x="20" y="40" font-family="'Syne', sans-serif" font-weight="bold" font-size="16" fill="#FFF">05. ECO-PACKAGING FOOTER</text>
+          <rect x="20" y="60" width="360" height="170" rx="10" fill="#1C1814"/>
+        </svg>
+      </div>
+
+      <div class="gall-item">
+        <svg width="100%" height="260" viewBox="0 0 400 260" fill="none">
+          <rect width="400" height="260" fill="#0A0B0E"/>
+          <text x="20" y="40" font-family="'Syne', sans-serif" font-weight="bold" font-size="16" fill="#FFF">06. COD & STRIPE GATEWAY</text>
+          <rect x="20" y="60" width="360" height="170" rx="10" fill="#0F1C18" stroke="#10B981"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. PRODUCT DETAIL PAGE (PDP ZOOM & ANIMATION) -->
+  <section class="keynote-block">
+    <div class="keynote-label"><span>✦</span> 03 — PRODUCT PAGE (PDP) DEEP DIVE</div>
+    <h2 class="keynote-heading">FULL PRODUCT PAGE & TEXTURE ZOOM</h2>
+
+    <div class="giant-mockup-frame">
+      <svg width="100%" height="550" viewBox="0 0 1200 550" fill="none">
+        <rect width="1200" height="550" fill="#0A0B0E"/>
+        <!-- Product Image Left -->
+        <rect x="80" y="60" width="480" height="430" rx="20" fill="#14241C" stroke="#10B981" stroke-width="2"/>
+        <circle cx="320" cy="275" r="120" fill="#10B981" fill-opacity="0.15" filter="blur(40px)"/>
+        <!-- Product Details Right -->
+        <text x="600" y="110" font-family="'Syne', sans-serif" font-weight="800" font-size="32" fill="#FFFFFF">AURA BOTANICAL SERUM</text>
+        <text x="600" y="145" font-family="sans-serif" font-weight="bold" font-size="22" fill="#10B981">$85.00 USD</text>
+        <text x="600" y="180" font-family="sans-serif" font-size="14" fill="#A1A1AA">★ ★ ★ ★ ★ (4.9 / 5 across 1,420 Verified Reviews)</text>
+        <!-- Add to Cart CTA -->
+        <rect x="600" y="240" width="320" height="50" rx="25" fill="#FFFFFF"/>
+        <text x="760" y="271" font-family="sans-serif" font-weight="bold" font-size="14" fill="#000" text-anchor="middle">ADD TO CART — $85.00</text>
+        <!-- One-Click Express Checkout -->
+        <rect x="600" y="305" width="320" height="50" rx="25" fill="#10B981"/>
+        <text x="760" y="336" font-family="sans-serif" font-weight="bold" font-size="14" fill="#000" text-anchor="middle">BUY WITH APPLE PAY </text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 05. CINEMATIC CHECKOUT SEQUENCE -->
+  <section class="keynote-block">
+    <div class="keynote-label"><span>✦</span> 04 — CHECKOUT & ORDER SUCCESS</div>
+    <h2 class="keynote-heading">FULL CINEMATIC CHECKOUT SEQUENCE</h2>
+
+    <div class="giant-mockup-frame">
+      <svg width="100%" height="380" viewBox="0 0 1200 380" fill="none">
+        <rect width="1200" height="380" fill="#07080B"/>
+        <!-- Cart Drawer Step 1 -->
+        <rect x="60" y="50" width="320" height="280" rx="16" fill="#12141D" stroke="rgba(255,255,255,0.1)"/>
+        <text x="90" y="90" font-family="sans-serif" font-weight="bold" font-size="14" fill="#FFF">01. SLIDE CART DRAWER</text>
+        <!-- One-Tap Express Payment Step 2 -->
+        <rect x="440" y="50" width="320" height="280" rx="16" fill="#12141D" stroke="#10B981"/>
+        <text x="470" y="90" font-family="sans-serif" font-weight="bold" font-size="14" fill="#10B981">02. EXPRESS APPLE PAY / COD</text>
+        <!-- Order Success & Track Step 3 -->
+        <rect x="820" y="50" width="320" height="280" rx="16" fill="#12141D" stroke="rgba(255,255,255,0.1)"/>
+        <text x="850" y="90" font-family="sans-serif" font-weight="bold" font-size="14" fill="#FFF">03. ORDER SUCCESS & TRACKING</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 06. LUXURY PACKAGING & BRAND UNIVERSE -->
+  <section class="keynote-block">
+    <div class="keynote-label"><span>✦</span> 05 — PACKAGING & UNBOXING UNIVERSE</div>
+    <h2 class="keynote-heading">PHYSICAL UNBOXING & BRAND MATERIALS</h2>
+
+    <div class="giant-mockup-frame">
+      <svg width="100%" height="450" viewBox="0 0 1200 450" fill="none">
+        <rect width="1200" height="450" fill="#090706"/>
+        <!-- Shipping Box Mockup -->
+        <rect x="100" y="100" width="300" height="250" rx="16" fill="#1C1814" stroke="#D97706" stroke-width="2"/>
+        <text x="250" y="230" font-family="'Syne', sans-serif" font-weight="bold" font-size="20" fill="#FFF" text-anchor="middle">AURA BOTANICA BOX</text>
+        <!-- Shopping Bag Mockup -->
+        <rect x="450" y="70" width="300" height="300" rx="16" fill="#14201A" stroke="#10B981" stroke-width="2"/>
+        <text x="600" y="230" font-family="'Syne', sans-serif" font-weight="bold" font-size="20" fill="#FFF" text-anchor="middle">SHOPPING BAG</text>
+        <!-- Gift Card & Receipt Mockup -->
+        <rect x="800" y="140" width="300" height="180" rx="12" fill="#242634" stroke="rgba(255,255,255,0.2)"/>
+        <text x="950" y="230" font-family="sans-serif" font-weight="bold" font-size="14" fill="#FFF" text-anchor="middle">GIFT CARD & INVOICE</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 07. 3D STUDIO & BLENDER WORKSPACE DEEP DIVE -->
+  <section class="keynote-section">
+    <div class="keynote-label"><span>✦</span> 06 — 3D STUDIO & BLENDER PRODUCTION VIEWPORT</div>
+    <h2 class="keynote-heading">FULL 3D FILE & BLENDER 3D VIEWPORT</h2>
+    
+    <div style="background:#121212; border:1px solid #A855F7; border-radius:24px; padding:3rem; margin-top:2rem;">
+      <svg width="100%" height="350" viewBox="0 0 1000 350" fill="none">
+        <rect width="1000" height="350" fill="#0A0A0E" rx="12"/>
+        <text x="100" y="110" font-family="sans-serif" font-weight="bold" font-size="14" fill="#A855F7">❖ 3D DESIGN SYSTEM (AUTO LAYOUT & TOKENS)</text>
+        <rect x="60" y="50" width="520" height="350" rx="16" fill="#1E1E1E" stroke="#A855F7" stroke-width="2"/>
+        <rect x="80" y="70" width="480" height="310" rx="8" fill="#121212"/>
+        <text x="100" y="110" font-family="sans-serif" font-weight="bold" font-size="14" fill="#A855F7">❖ DESIGN SYSTEM (AUTO LAYOUT & TOKENS)</text>
+        <!-- Blender 3D Viewport Right -->
+        <rect x="620" y="50" width="520" height="350" rx="16" fill="#292015" stroke="#F97316" stroke-width="2"/>
+        <rect x="640" y="70" width="480" height="310" rx="8" fill="#140E0A"/>
+        <text x="660" y="110" font-family="sans-serif" font-weight="bold" font-size="14" fill="#F97316">🧊 BLENDER 3D CYCLES LIGHTING & MATERIAL NODES</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 08. GIANT BEFORE vs AFTER COMPARISON -->
+  <section class="keynote-block">
+    <div class="keynote-label"><span>✦</span> 07 — IMPACT COMPARISON</div>
+    <h2 class="keynote-heading">BEFORE vs AFTER BENCHMARK</h2>
+
+    <div class="giant-mockup-frame">
+      <svg width="100%" height="320" viewBox="0 0 1200 320" fill="none">
+        <rect width="1200" height="320" fill="#050608"/>
+        <rect x="60" y="40" width="520" height="240" rx="16" fill="#1C1414" stroke="#EF4444"/>
+        <text x="320" y="100" font-family="sans-serif" font-weight="bold" font-size="18" fill="#EF4444" text-anchor="middle">BEFORE VEXA (GENERIC STORE)</text>
+        <text x="320" y="150" font-family="sans-serif" font-size="14" fill="#A1A1AA" text-anchor="middle">1.2% Conversion • 78% Abandonment • 3.4s Load</text>
+
+        <rect x="620" y="40" width="520" height="240" rx="16" fill="#12241B" stroke="#10B981" stroke-width="2"/>
+        <text x="880" y="100" font-family="sans-serif" font-weight="bold" font-size="18" fill="#10B981" text-anchor="middle">AFTER VEXA (LUXURY DTC STORE)</text>
+        <text x="880" y="150" font-family="sans-serif" font-weight="bold" font-size="14" fill="#FFFFFF" text-anchor="middle">2.9% Conversion (+142%) • 42% Abandonment • 0.7s Load</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 09. EMOTIONAL KEYNOTE CTA -->
+  <section class="keynote-block" style="text-align: center; margin-top: 8rem;">
+    <div class="badge" style="margin-bottom: 1.5rem;"><span class="badge-dot"></span> YOUR BRAND DESERVES THIS LEVEL</div>
+    <h2 style="font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 900; margin-bottom: 1.5rem; line-height: 1.05;">
+      IMAGINE YOUR STORE LOOKING LIKE THIS.
+    </h2>
+    <p style="color: #A1A1AA; font-size: 1.3rem; max-width: 800px; margin: 0 auto 3rem;">
+      Your competitors are upgrading their storefronts every single day. Let's build the ecommerce brand your customers will never forget.
+    </p>
+
+    <div style="display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary" style="padding: 1.25rem 3.5rem; font-size: 1.15rem;">Start Your Project →</a>
+      <a href="contact.html" class="btn btn-secondary" style="padding: 1.25rem 2.5rem; font-size: 1.15rem;">Book a Discovery Call ↗</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 VEXA Studio. All rights reserved.</div>
+        <div>Apple Keynote & Awwwards Level Exhibition</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="canvas-mockups.js"></script>
+</body>
+</html>

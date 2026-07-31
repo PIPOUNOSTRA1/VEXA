@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VEXA Studio — المعرض الماستر للمتاجر الحقيقية | Afghani Beauty, NAWA, NAMA, ZAPHERA & 7LLE</title>
+  <meta name="description" content="استعراض تفاعلي ثلاثي الأبعاد للمتاجر وصفحات الهبوط الحقيقية للعملاء: صفحة هبوط زيت الأفغاني الإمارات Afghani Beauty AE، متجر نواة للجمال NAWA، متجر ناما للجمال NAMA، متجر زاڤيرا ZAPHERA، ومتجر حلّة ستور 7LLE.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Space+Grotesk:wght@500;700&family=Syne:wght@700;800&family=Fira+Code:wght@400;500;700&display=swap');
+    
+    body {
+      background-color: #020203;
+      font-family: 'Cairo', var(--font-body), sans-serif;
+      color: #FFFFFF;
+      text-align: right;
+      overflow-x: hidden;
+    }
+
+    /* 3D Perspective Canvas Outer Container */
+    .studio-3d-stage {
+      perspective: 1400px;
+      perspective-origin: 50% 30%;
+      width: 100%;
+      margin: 3rem 0;
+      position: relative;
+    }
+
+    /* The Main 3D Tilted Studio Canvas Window */
+    .studio-3d-window {
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+      background: #1E1E1E;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 50px 150px rgba(0, 0, 0, 0.95), 0 0 80px rgba(168, 85, 247, 0.15);
+      transform-style: preserve-3d;
+      transform: rotateX(12deg) rotateY(-4deg) rotateZ(0deg) scale(0.96);
+      transition: transform 0.1s ease-out;
+      will-change: transform;
+    }
+
+    /* Studio Window Top Toolbar */
+    .studio-topbar {
+      height: 52px;
+      background: #2C2C2C;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      direction: ltr;
+    }
+
+    .studio-logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .studio-tools {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .studio-tool-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.06);
+      color: #A1A1AA;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .studio-tool-btn.active {
+      background: #A855F7;
+      color: #FFF;
+    }
+
+    .studio-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn-dev-mode {
+      background: rgba(168, 85, 247, 0.2);
+      border: 1px solid #A855F7;
+      color: #C084FC;
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    /* Studio Workspace Body Grid */
+    .studio-workspace-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr 300px;
+      min-height: 720px;
+      background: #121212;
+      direction: ltr;
+    }
+
+    /* Left Sidebar: Layers & Pages */
+    .studio-sidebar-left {
+      background: #1E1E1E;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.25rem 1rem;
+      font-size: 0.85rem;
+      color: #A1A1AA;
+    }
+
+    .layer-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 0.35rem;
+      transition: background 0.2s;
+    }
+
+    .layer-item:hover, .layer-item.active {
+      background: rgba(168, 85, 247, 0.15);
+      color: #FFF;
+    }
+
+    .layer-icon {
+      color: #A855F7;
+      font-weight: bold;
+    }
+
+    /* Center Infinite Canvas Viewport */
+    .studio-viewport-center {
+      background: #0E0E0E;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* REAL DEVICE MOCKUPS STYLING */
+    .macbook-mockup-frame {
+      width: 100%;
+      max-width: 840px;
+      background: #16171E;
+      border: 3px solid #A855F7;
+      border-radius: 24px;
+      padding: 12px;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.95);
+      position: relative;
+    }
+
+    .macbook-screen {
+      width: 100%;
+      height: 450px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      background: #000;
+    }
+
+    .macbook-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.92) contrast(1.05);
+      transition: transform 0.5s ease;
+    }
+
+    .macbook-mockup-frame:hover .macbook-screen img {
+      transform: scale(1.03);
+    }
+
+    .macbook-notch {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 16px;
+      background: #16171E;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      z-index: 10;
+    }
+
+    /* Right Inspector & Code Panel */
+    .studio-sidebar-right {
+      background: #1E1E1E;
+      border-left: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.5rem 1.25rem;
+      font-size: 0.85rem;
+    }
+
+    .code-inspect-box {
+      background: #0A0B0E;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem;
+      color: #10B981;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Interactive Service Card */
+    .service-chapter-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 32px;
+      padding: 4rem 3.5rem;
+      margin-bottom: 5rem;
+      backdrop-filter: blur(15px);
+      position: relative;
+      transition: border-color 0.4s ease;
+    }
+
+    .service-chapter-card:hover {
+      border-color: rgba(168, 85, 247, 0.5);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .mockup-badge-bar {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      left: 20px;
+      background: rgba(10, 12, 18, 0.88);
+      backdrop-filter: blur(12px);
+      padding: 0.85rem 1.25rem;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      direction: rtl;
+    }
+
+    @media (max-width: 1024px) {
+      .studio-workspace-grid { grid-template-columns: 1fr; }
+      .studio-sidebar-left, .studio-sidebar-right { display: none; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .studio-3d-window { transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" style="direction: ltr;">
+    <a href="index.html" class="brand-logo">
+      <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="white"/><path d="M8 10L16 22L24 10" stroke="black" stroke-width="3.5"/></svg>
+      VEXA
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="behance-case-studies.html" class="nav-link active">Featured Stores</a></li>
+      <li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="zaphira-caftan-luxury.html" class="nav-link">ZAPHERA Keynote</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="contact.html" class="btn btn-primary">Start Your Store Project</a>
+    </div>
+  </nav>
+
+  <div class="container" style="padding-top: 10rem;">
+    
+    <!-- Hero Header -->
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <div class="badge" style="margin-bottom: 1.5rem; border-color: rgba(168,85,247,0.4); background: rgba(168,85,247,0.1); color: #C084FC;">
+        <span class="badge-dot" style="background: #A855F7;"></span> 5 OFFICIAL LIVE CLIENT STORES & LANDING PAGES SHOWCASE
+      </div>
+
+      <h1 class="display-title" style="font-size: clamp(2.5rem, 5.5vw, 4.8rem); margin-bottom: 1.5rem; line-height: 1.1;">
+        معرض المتاجر وصفحات الهبوط الحقيقية <br>
+        <span class="text-gradient" style="background: linear-gradient(135deg, #FFF 0%, #C084FC 50%, #A855F7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Afghani Beauty AE • NAWA • NAMA • ZAPHERA • 7LLE</span>
+      </h1>
+
+      <p class="sub-title" style="margin: 0 auto 2rem; max-width: 900px; font-size: 1.25rem; color: #A1A1AA;">
+        استعراض 3D سكرول تفاعلي لأعمالنا المباشرة: <strong>زيت الأفغاني الأصلي (الإمارات Afghani Beauty AE)</strong>، <strong>نواة للجمال NAWA</strong>، <strong>ناما للجمال NAMA</strong>، <strong>زاڤيرا ZAPHERA</strong>، و<strong>حلّة ستور 7LLE</strong>.
+      </p>
+
+      <div style="display:flex; justify-content:center; gap:0.9rem; flex-wrap:wrap; margin-bottom:3rem;">
+        <a href="https://pipounostra1.github.io/afganibeautyae/landing.html" target="_blank" class="btn btn-primary" style="padding: 0.85rem 1.6rem; background:#D4A359; border:none; color:#000; font-weight:900;">
+          🇦🇪 صفحة زيت الأفغاني الإمارات ↗
+        </a>
+        <a href="https://nawabeauty.shop/" target="_blank" class="btn btn-primary" style="padding: 0.85rem 1.6rem; background:#10B981; border:none; color:#000; font-weight:900;">
+          نواة للجمال (NAWA) ↗
+        </a>
+        <a href="https://namabeauty.shop/" target="_blank" class="btn btn-primary" style="padding: 0.85rem 1.6rem; background:#046A38; border:none; color:#FFF; font-weight:900;">
+          ناما للجمال (NAMA) ↗
+        </a>
+        <a href="https://pipounostra1.github.io/zaphera-coftan-pro/" target="_blank" class="btn btn-primary" style="padding: 0.85rem 1.6rem; background:linear-gradient(135deg, #F3E5C8, #D4A359); border:none; color:#000; font-weight:900;">
+          زاڤيرا (ZAPHERA) ↗
+        </a>
+        <a href="https://7lle.com/ar" target="_blank" class="btn btn-primary" style="padding: 0.85rem 1.6rem; background:#EAAB48; border:none; color:#000; font-weight:900;">
+          حلّة ستور (7LLE) ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         INTERACTIVE 3D SCROLL CANVAS STAGE (5 REAL LIVE CLIENT PROJECTS)
+         ========================================================================== -->
+    <div class="studio-3d-stage" id="studio-3d-stage">
+      <div class="studio-3d-window" id="studio-3d-window">
+        
+        <!-- Studio Topbar -->
+        <div class="studio-topbar">
+          <div class="studio-logo-badge">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#A855F7"/><path d="M8 10L16 22L24 10" stroke="white" stroke-width="3.5"/></svg>
+            <span>VEXA_Live_5_Client_Projects_System.canvas</span>
+          </div>
+
+          <div class="studio-tools">
+            <div class="studio-tool-btn">✦</div>
+            <div class="studio-tool-btn active"># Frame</div>
+            <div class="studio-tool-btn">▭ Shape</div>
+            <div class="studio-tool-btn">✒ Pen</div>
+            <div class="studio-tool-btn">T Text</div>
+            <div class="studio-tool-btn">❖ Component</div>
+          </div>
+
+          <div class="studio-actions">
+            <span class="btn-dev-mode">⚡ Dev Mode (Multi-Pixel Landing Page)</span>
+            <span style="color:#FFF; font-size:0.85rem; font-weight:700;">100% ▾</span>
+            <a href="https://pipounostra1.github.io/afganibeautyae/landing.html" target="_blank" style="background:#D4A359; color:#000; border:none; padding:0.4rem 1.2rem; border-radius:8px; font-weight:800; text-decoration:none;">Afghani AE ↗</a>
+          </div>
+        </div>
+
+        <!-- Studio Main Workspace Body -->
+        <div class="studio-workspace-grid">
+          
+          <!-- Left Sidebar Layers -->
+          <div class="studio-sidebar-left">
+            <div style="font-weight:700; color:#FFF; margin-bottom:1rem; text-transform:uppercase; letter-spacing:0.1em; font-size:0.75rem;">Live Client Projects</div>
+            <div class="layer-item active" onclick="switchStudioView('afghani')"><span class="layer-icon">🇦🇪</span> 01_Afghani_Beauty_AE_Landing</div>
+            <div class="layer-item" onclick="switchStudioView('nawa')"><span class="layer-icon">🌿</span> 02_NAWA_Beauty_Gold_Hero</div>
+            <div class="layer-item" onclick="switchStudioView('nama')"><span class="layer-icon">💊</span> 03_NAMA_Beauty_SFDA_Green</div>
+            <div class="layer-item" onclick="switchStudioView('zaphera')"><span class="layer-icon">👑</span> 04_ZAPHERA_Luxury_Caftan</div>
+            <div class="layer-item" onclick="switchStudioView('7lle')"><span class="layer-icon">🛍️</span> 05_7LLE_Store_Salla</div>
+            
+            <div style="font-weight:700; color:#FFF; margin:1.5rem 0 0.8rem; text-transform:uppercase; letter-spacing:0.1em; font-size:0.75rem;">Landing Page Engine</div>
+            <div class="layer-item"><span style="color:#D4A359;">●</span> Meta Pixel / TikTok Pixel</div>
+            <div class="layer-item"><span style="color:#10B981;">●</span> Snap & GA4 Event Tracking</div>
+            <div class="layer-item"><span style="color:#EAAB48;">●</span> UAE Emirates Express COD</div>
+          </div>
+
+          <!-- Center Infinite Canvas Viewport -->
+          <div class="studio-viewport-center" id="canvas-active-container">
+            
+            <!-- Real MacBook Pro Device Mockup displaying Afghani Beauty AE Landing Page -->
+            <div class="macbook-mockup-frame" id="canvas-active-frame" style="border-color:#D4A359;">
+              <div class="macbook-notch"></div>
+              <div class="macbook-screen">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80" alt="صفحة هبوط زيت الأفغاني الأصلي الذهبي للإمارات">
+                <div class="mockup-badge-bar" style="border-color:#D4A359;">
+                  <div>
+                    <span style="color:#D4A359; font-weight:800; font-size:0.9rem;">AFGHANI BEAUTY AE LANDING PAGE</span>
+                    <div style="color:#FFF; font-weight:700; font-size:1.1rem; margin-top:0.1rem;">زيت الأفغاني الأصلي الذهبي — سر كثافة ونعومة الشعر الشرقية (الإمارات COD)</div>
+                  </div>
+                  <a href="https://pipounostra1.github.io/afganibeautyae/landing.html" target="_blank" class="badge" style="border-color:#D4A359; color:#D4A359; text-decoration:none;">⚡ Live Landing Page ↗</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Sidebar Inspector -->
+          <div class="studio-sidebar-right">
+            <div style="font-weight:700; color:#FFF; margin-bottom:1rem; text-transform:uppercase; letter-spacing:0.1em; font-size:0.75rem;">Live Client Stores Inspection</div>
+            
+            <div style="color:#A1A1AA; font-size:0.8rem; margin-bottom:0.4rem;">Afghani Beauty URL:</div>
+            <div style="background:#000; padding:0.5rem; border-radius:8px; border:1px solid rgba(212,163,89,0.4); color:#FFF; font-family:monospace; font-size:0.75rem; word-break:break-all;">
+              afganibeautyae/landing.html
+            </div>
+
+            <div style="color:#A1A1AA; font-size:0.8rem; margin-top:0.8rem; margin-bottom:0.4rem;">Conversion Engine:</div>
+            <div class="code-inspect-box">
+              // Multi-Pixel Unified Tracker<br>
+              trackPixelEvent('Purchase', {<br>
+              &nbsp;&nbsp;currency: 'AED',<br>
+              &nbsp;&nbsp;value: 299<br>
+              });
+            </div>
+
+            <a href="https://pipounostra1.github.io/afganibeautyae/landing.html" target="_blank" style="display:block; text-align:center; text-decoration:none; margin-top:1.5rem; background:#D4A359; color:#000; padding:0.75rem; border-radius:10px; font-weight:800;">
+              فتح صفحة الهبوط ↗
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROJECT 01: AFGHANI BEAUTY AE LANDING PAGE -->
+    <div class="service-chapter-card" style="border-color: rgba(212,163,89,0.4);">
+      <div class="grid-2">
+        <div>
+          <span class="badge" style="margin-bottom: 1rem; border-color:#D4A359; color:#D4A359;"><span class="badge-dot" style="background:#D4A359;"></span> PROJECT 01 — REAL LIVE HIGH-CONVERTING LANDING PAGE</span>
+          <h2 style="font-size: 2.6rem; font-weight: 900; color: #FFF; margin-bottom: 1.25rem;">زيت الأفغاني الأصلي الذهبي (Afghani Beauty UAE Landing Page)</h2>
+          <p style="color: #A1A1AA; line-height: 1.8; font-size: 1.1rem; margin-bottom: 1.5rem;">
+            صفحة هبوط مباشرة عالية التحويل مخصصة لدولة الإمارات العربية المتحدة لبيع <strong>زيت الأفغاني الأصلي الذهبي</strong> لإنبات وتكثيف الشعر ومنع التساقط نهائياً للرجال والنساء واللحية مع تتبع البيكسل الرباعي (Meta, TikTok, Snapchat, GA4) ونموذج الطلب السريع.
+          </p>
+          <ul style="color: #FFFFFF; line-height: 2; list-style: none; padding-right: 0;">
+            <li>🇦🇪 <strong>تغطية الإمارات الدفع عند الاستلام:</strong> شحن سريع ومجاني لجميع إمارات الدولة.</li>
+            <li>📊 <strong>نظام التتبع الرباعي (Multi-Pixel Engine):</strong> ربط أحداث الشراء مع Meta, TikTok, Snapchat & GA4.</li>
+            <li>⚡ <strong>واجهة هبوط سريعة الاستجابة:</strong> تحويل عالي بدون تعقيد مع عروض الحزم والتوفير.</li>
+          </ul>
+          <div style="margin-top:2rem;">
+            <a href="https://pipounostra1.github.io/afganibeautyae/landing.html" target="_blank" class="btn btn-primary" style="padding:0.9rem 2.2rem; background:#D4A359; color:#000; font-weight:900; border:none;">
+              فتح صفحة الهبوط المباشرة (Afghani Beauty UAE) ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="macbook-mockup-frame" style="max-width:100%; border-color:#D4A359;">
+          <div class="macbook-notch"></div>
+          <div class="macbook-screen" style="height:380px;">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80" alt="صفحة هبوط زيت الأفغاني الأصلي الذهبي">
+            <div class="mockup-badge-bar" style="border-color:#D4A359;">
+              <span style="color:#FFF; font-weight:700;">زيت الأفغاني الأصلي — UAE Landing Page</span>
+              <span style="color:#D4A359; font-weight:800;">Free UAE Express Delivery</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROJECT 02: NAWA BEAUTY -->
+    <div class="service-chapter-card" style="border-color: rgba(212,163,89,0.4);">
+      <div class="grid-2">
+        <div class="macbook-mockup-frame" style="max-width:100%; border-color:#D4A359;">
+          <div class="macbook-notch"></div>
+          <div class="macbook-screen" style="height:380px;">
+            <img src="nawa-hero-real.png" alt="واجهة متجر نواة للجمال NAWA Beauty الحقيقية">
+            <div class="mockup-badge-bar" style="border-color:#D4A359;">
+              <span style="color:#FFF; font-weight:700;">نواة للجمال — NAWA Beauty Real Homepage</span>
+              <span style="color:#D4A359; font-weight:800;">nawabeauty.shop</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <span class="badge" style="margin-bottom: 1rem; border-color:#D4A359; color:#D4A359;"><span class="badge-dot" style="background:#D4A359;"></span> REAL STORE SCREENSHOT — NAWA BEAUTY</span>
+          <h2 style="font-size: 2.6rem; font-weight: 900; color: #FFF; margin-bottom: 1.25rem;">نواة للجمال (NAWA Beauty — جمالك يبدأ من الداخل)</h2>
+          <p style="color: #A1A1AA; line-height: 1.8; font-size: 1.1rem; margin-bottom: 1.5rem;">
+            صورة الواجهة الحقيقية لمتجر <strong>نواة للجمال (NAWA Beauty)</strong>. استعراض تصميم البروتوكولات الثلاثة باللون الذهبي الفاخر مع خدمة الدفع عند الاستلام.
+          </p>
+          <div style="margin-top:2rem;">
+            <a href="https://nawabeauty.shop/" target="_blank" class="btn btn-primary" style="padding:0.9rem 2.2rem; background:#D4A359; color:#000; font-weight:900; border:none;">
+              فتح متجر NAWA Beauty المباشر (nawabeauty.shop) ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROJECT 03: NAMA BEAUTY -->
+    <div class="service-chapter-card" style="border-color: rgba(4,106,56,0.4);">
+      <div class="grid-2">
+        <div>
+          <span class="badge" style="margin-bottom: 1rem; border-color:#046A38; color:#046A38;"><span class="badge-dot" style="background:#046A38;"></span> REAL STORE SCREENSHOT — NAMA BEAUTY</span>
+          <h2 style="font-size: 2.6rem; font-weight: 900; color: #FFF; margin-bottom: 1.25rem;">ناما للجمال (NAMA Beauty — صيدلية الجمال السعودية)</h2>
+          <p style="color: #A1A1AA; line-height: 1.8; font-size: 1.1rem; margin-bottom: 1.5rem;">
+            صورة الواجهة الحقيقية لمتجر <strong>ناما للجمال (NAMA Beauty)</strong> باللون الأخضر الزمردي بختم ترخيص SFDA الرسمي من هيئة الغذاء والدواء السعودية.
+          </p>
+          <div style="margin-top:2rem;">
+            <a href="https://namabeauty.shop/" target="_blank" class="btn btn-primary" style="padding:0.9rem 2.2rem; background:#046A38; color:#FFF; font-weight:900; border:none;">
+              فتح متجر NAMA Beauty المباشر (namabeauty.shop) ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="macbook-mockup-frame" style="max-width:100%; border-color:#046A38;">
+          <div class="macbook-notch"></div>
+          <div class="macbook-screen" style="height:380px;">
+            <img src="nama-hero-real.png" alt="واجهة متجر ناما للجمال NAMA Beauty الحقيقية">
+            <div class="mockup-badge-bar" style="border-color:#046A38;">
+              <span style="color:#FFF; font-weight:700;">ناما للجمال — NAMA Beauty SFDA Real Homepage</span>
+              <span style="color:#046A38; font-weight:800;">namabeauty.shop</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROJECT 04: ZAPHERA CAFTAN PRO -->
+    <div class="service-chapter-card" style="border-color: rgba(212,163,89,0.4);">
+      <div class="grid-2">
+        <div class="macbook-mockup-frame" style="max-width:100%; border-color:#D4A359;">
+          <div class="macbook-notch"></div>
+          <div class="macbook-screen" style="height:350px;">
+            <img src="https://pipounostra1.github.io/zaphera-coftan-pro/assets/caftan-alhambra.png" alt="الكاراكو العاصمي الفاخر من متجر زاڤيرا ZAPHERA">
+            <div class="mockup-badge-bar" style="border-color:#D4A359;">
+              <span style="color:#FFF; font-weight:700;">زاڤيرا — ZAPHERA Haute Couture</span>
+              <span style="color:#D4A359; font-weight:800;">58 ولاية COD</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <span class="badge" style="margin-bottom: 1rem; border-color:#D4A359; color:#D4A359;"><span class="badge-dot" style="background:#D4A359;"></span> PROJECT 04 — ZAPHERA CAFTAN PRO</span>
+          <h2 style="font-size: 2.6rem; font-weight: 900; color: #FFF; margin-bottom: 1.25rem;">زاڤيرا (ZAPHERA — دار الأزياء الجزائرية الفاخرة)</h2>
+          <p style="color: #A1A1AA; line-height: 1.8; font-size: 1.1rem; margin-bottom: 1.5rem;">
+            استعراض التشكيلة الملكية لدار الأزياء <strong>زاڤيرا ZAPHERA</strong>: قفطان الحمراء، قفطان الزاهية، الكاراكو المخملي الأسود المطرز بالفتلة والشعرة الذهبية.
+          </p>
+          <div style="margin-top:2rem;">
+            <a href="https://pipounostra1.github.io/zaphera-coftan-pro/" target="_blank" class="btn btn-primary" style="padding:0.9rem 2.2rem; background:linear-gradient(135deg, #F3E5C8, #D4A359); color:#000; font-weight:900; border:none;">
+              فتح متجر ZAPHERA المباشر ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROJECT 05: 7LLE STORE -->
+    <div class="service-chapter-card" style="border-color: rgba(234,171,72,0.4);">
+      <div class="grid-2">
+        <div>
+          <span class="badge" style="margin-bottom: 1rem; border-color:#EAAB48; color:#EAAB48;"><span class="badge-dot" style="background:#EAAB48;"></span> PROJECT 05 — 7LLE STORE</span>
+          <h2 style="font-size: 2.6rem; font-weight: 900; color: #FFF; margin-bottom: 1.25rem;">حلّة ستور (7LLE Store — متجر سلة Salla)</h2>
+          <p style="color: #A1A1AA; line-height: 1.8; font-size: 1.1rem; margin-bottom: 1.5rem;">
+            المتجر الأفضل بالأعلى جودة والأقل سعراً. متجر سلة بتصميم مخصص وسريع للسعودية والخليج.
+          </p>
+          <div style="margin-top:2rem;">
+            <a href="https://7lle.com/ar" target="_blank" class="btn btn-primary" style="padding:0.9rem 2.2rem; background:#EAAB48; color:#000; font-weight:900; border:none;">
+              فتح متجر حلّة ستور المباشر (7lle.com) ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="macbook-mockup-frame" style="max-width:100%; border-color:#EAAB48;">
+          <div class="macbook-notch"></div>
+          <div class="macbook-screen" style="height:350px;">
+            <img src="https://cdn.salla.sa/WOXeN/cUqv6nHPxKwSO1MAGgswHDzPg96t1mfGqOkBtiP9.png" alt="متجر حلّة ستور 7LLE">
+            <div class="mockup-badge-bar" style="border-color:#EAAB48;">
+              <span style="color:#FFF; font-weight:700;">حلّة ستور || 𝟕𝐋𝐄 Salla Store</span>
+              <span style="color:#EAAB48; font-weight:800;">7lle.com</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CALL TO ACTION FOR STORE CREATION -->
+    <div style="background: linear-gradient(135deg, rgba(168,85,247,0.12) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(168,85,247,0.3); border-radius: 32px; padding: 4rem 3rem; text-align: center; margin-bottom: 6rem;">
+      <span class="badge" style="border-color:#A855F7; color:#C084FC; margin-bottom:1rem;"><span class="badge-dot" style="background:#A855F7;"></span> START YOUR STORE PROJECT</span>
+      <h2 style="font-size: 2.5rem; font-weight: 900; color: #FFF; margin-bottom: 1rem;">جاهز لبناء متجرك أو صفحة هبوطك الفاخرة القادمة؟</h2>
+      <p style="color: #A1A1AA; font-size: 1.15rem; margin: 0 auto 2.5rem; max-width: 700px;">
+        سواء كنت تبيع في الإمارات (شحن مجاني و COD)، الجزائر (58 ولاية)، أو السعودية والخليج، VEXA Studio تضمن لك صفحة هبوط أو متجراً فخماً بنسبة تحويل مرتفعة.
+      </p>
+
+      <div style="display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-primary" style="padding: 1.1rem 2.8rem; background:#A855F7; border:none; color:#FFF; font-weight:900;">
+          ابدأ مشروعك الآن مع VEXA Studio ←
+        </a>
+        <a href="projects.html" class="btn btn-secondary" style="padding: 1.1rem 2.5rem;">تصفح المشاريع المباشرة ↗</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 VEXA Studio. جميع الحقوق محفوظة.</div>
+        <div>Afghani Beauty AE, NAWA, NAMA, ZAPHERA & 7LLE Real Live Client Stores Standard</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    /* Interactive 3D Scroll Control for Studio Canvas Stage */
+    window.addEventListener('scroll', () => {
+      const stage = document.getElementById('studio-3d-stage');
+      const window3d = document.getElementById('studio-3d-window');
+      if (!stage || !window3d) return;
+
+      const rect = stage.getBoundingClientRect();
+      const viewHeight = window.innerHeight;
+
+      if (rect.top < viewHeight && rect.bottom > 0) {
+        const scrollPercent = (viewHeight - rect.top) / (viewHeight + rect.height);
+        
+        const rotateX = 16 - (scrollPercent * 16); // 16deg to 0deg
+        const rotateY = -6 + (scrollPercent * 8);  // -6deg to 2deg
+        const scale = 0.94 + (scrollPercent * 0.06); // 0.94 to 1.0
+
+        window3d.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale(${scale.toFixed(3)})`;
+      }
+    });
+
+    /* Switch Views inside Center Studio Viewport for 5 Real Client Projects */
+    function switchStudioView(viewType) {
+      const container = document.getElementById('canvas-active-container');
+      if (!container) return;
+
+      const layerItems = document.querySelectorAll('.layer-item');
+      layerItems.forEach(item => item.classList.remove('active'));
+
+      if (viewType === 'afghani') {
+        container.innerHTML = `
+          <div class="macbook-mockup-frame" style="border-color:#D4A359;">
+            <div class="macbook-notch"></div>
+            <div class="macbook-screen">
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80" alt="صفحة هبوط زيت الأفغاني الأصلي الذهبي للإمارات">
+              <div class="mockup-badge-bar" style="border-color:#D4A359;">
+                <div>
+                  <span style="color:#D4A359; font-weight:800; font-size:0.9rem;">AFGHANI BEAUTY AE LANDING PAGE</span>
+                  <div style="color:#FFF; font-weight:700; font-size:1.1rem; margin-top:0.1rem;">زيت الأفغاني الأصلي الذهبي — الإمارات (COD)</div>
+                </div>
+                <a href="https://pipounostra1.github.io/afganibeautyae/landing.html" target="_blank" class="badge" style="border-color:#D4A359; color:#D4A359; text-decoration:none;">⚡ Live Landing Page ↗</a>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (viewType === 'nawa') {
+        container.innerHTML = `
+          <div class="macbook-mockup-frame" style="border-color:#D4A359;">
+            <div class="macbook-notch"></div>
+            <div class="macbook-screen">
+              <img src="nawa-hero-real.png" alt="متجر نواة للجمال NAWA Beauty الأصلي">
+              <div class="mockup-badge-bar" style="border-color:#D4A359;">
+                <div>
+                  <span style="color:#D4A359; font-weight:800; font-size:0.9rem;">NAWA BEAUTY REAL SCREENSHOT VIEW</span>
+                  <div style="color:#FFF; font-weight:700; font-size:1.1rem; margin-top:0.1rem;">نواة للجمال | NAWA Beauty — جمالك يبدأ من الداخل</div>
+                </div>
+                <a href="https://nawabeauty.shop/" target="_blank" class="badge" style="border-color:#D4A359; color:#D4A359; text-decoration:none;">⚡ nawabeauty.shop ↗</a>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (viewType === 'nama') {
+        container.innerHTML = `
+          <div class="macbook-mockup-frame" style="border-color:#046A38;">
+            <div class="macbook-notch"></div>
+            <div class="macbook-screen">
+              <img src="nama-hero-real.png" alt="متجر ناما للجمال NAMA Beauty الأصلي">
+              <div class="mockup-badge-bar" style="border-color:#046A38;">
+                <div>
+                  <span style="color:#046A38; font-weight:800; font-size:0.9rem;">NAMA BEAUTY SFDA SCREENSHOT VIEW</span>
+                  <div style="color:#FFF; font-weight:700; font-size:1.1rem; margin-top:0.1rem;">ناما للجمال | NAMA Beauty — صيدلية الجمال السعودية (SFDA)</div>
+                </div>
+                <a href="https://namabeauty.shop/" target="_blank" class="badge" style="border-color:#046A38; color:#046A38; text-decoration:none;">⚡ namabeauty.shop ↗</a>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (viewType === 'zaphera') {
+        container.innerHTML = `
+          <div class="macbook-mockup-frame" style="border-color:#D4A359;">
+            <div class="macbook-notch"></div>
+            <div class="macbook-screen">
+              <img src="https://pipounostra1.github.io/zaphera-coftan-pro/assets/caftan-alhambra.png" alt="متجر زاڤيرا ZAPHERA">
+              <div class="mockup-badge-bar" style="border-color:#D4A359;">
+                <div>
+                  <span style="color:#D4A359; font-weight:800; font-size:0.9rem;">ZAPHERA CAFTAN MOCKUP</span>
+                  <div style="color:#FFF; font-weight:700; font-size:1.1rem; margin-top:0.1rem;">زاڤيرا | ZAPHERA — قفطان الحمراء والكاراكو العاصمي</div>
+                </div>
+                <a href="https://pipounostra1.github.io/zaphera-coftan-pro/" target="_blank" class="badge" style="border-color:#D4A359; color:#D4A359; text-decoration:none;">⚡ Live Store ↗</a>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (viewType === '7lle') {
+        container.innerHTML = `
+          <div class="macbook-mockup-frame" style="border-color:#EAAB48;">
+            <div class="macbook-notch"></div>
+            <div class="macbook-screen">
+              <img src="https://cdn.salla.sa/WOXeN/cUqv6nHPxKwSO1MAGgswHDzPg96t1mfGqOkBtiP9.png" alt="متجر حلّة ستور 7LLE">
+              <div class="mockup-badge-bar" style="border-color:#EAAB48;">
+                <div>
+                  <span style="color:#EAAB48; font-weight:800; font-size:0.9rem;">7LLE STORE MOCKUP VIEW</span>
+                  <div style="color:#FFF; font-weight:700; font-size:1.1rem; margin-top:0.1rem;">حلّة ستور || 𝟕𝐋𝐄 — متجر سلة للأعلى جودة والأقل سعراً</div>
+                </div>
+                <a href="https://7lle.com/ar" target="_blank" class="badge" style="border-color:#EAAB48; color:#EAAB48; text-decoration:none;">⚡ 7lle.com ↗</a>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

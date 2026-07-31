@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VEXA Studio — المعرض البصري الوثائقي التفاعلي للمتاجر | Interactive Exhibition</title>
+  <meta name="description" content="وثائقي بصري تفاعلي لمتاجر التجارة الإلكترونية بمستوى Awwwards & Behance Featured: مشاهد التغليف، التجربة عبر الأجهزة، متوالية الخروج الدقيق، ورندرات Blender و Studio 3D Workspace.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Space+Grotesk:wght@700&family=Syne:wght@800&display=swap');
+    
+    body {
+      background-color: #020203;
+      color: #FFFFFF;
+      font-family: 'Cairo', sans-serif;
+      text-align: right;
+      overflow-x: hidden;
+    }
+
+    .doc-hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.06) 0%, rgba(2,2,3,1) 80%);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 4rem 2rem;
+    }
+
+    .doc-section {
+      padding: 6rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+
+    .vis-frame {
+      width: 100%;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: #060608;
+      overflow: hidden;
+      margin: 2.5rem 0;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+      position: relative;
+    }
+
+    .device-grid-5 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .device-card {
+      background: #0A0B10;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .packaging-universe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .pack-item {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .doc-cta-box {
+      background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.01) 100%);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 32px;
+      padding: 5rem 3rem;
+      text-align: center;
+      margin: 6rem 0;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.9);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <nav class="navbar" style="direction: ltr;">
+    <a href="index.html" class="brand-logo">
+      <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="white"/><path d="M8 10L16 22L24 10" stroke="black" stroke-width="3.5"/></svg>
+      VEXA
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="behance.html" class="nav-link">Behance Showcase</a></li>
+      <li><a href="behance-master-documentary.html" class="nav-link active">Visual Exhibition Documentary</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+    </div>
+  </nav>
+
+  <!-- DOCUMENTARY HERO EXHIBITION -->
+  <header class="doc-hero">
+    <div class="badge" style="margin-bottom: 1.5rem;"><span class="badge-dot"></span> LUXURY VISUAL EXHIBITION & DOCUMENTARY 2026</div>
+    <h1 class="display-title" style="font-size: clamp(3rem, 7vw, 6rem); max-width: 1100px; margin-bottom: 1.5rem;">
+      THE VISUAL <br><span class="text-gradient">ECOMMERCE DOCUMENTARY</span>
+    </h1>
+    <p class="sub-title" style="margin: 0 auto 3rem; max-width: 850px;">
+      معرض بصري وثائقي 80% صور وفيديوهات ورندرات تفاعلية، 20% نصوص. رحلة داخل مقرات وإنتاج المتاجر الإلكترونية الأكثر نجاحاً.
+    </p>
+
+    <!-- Master Interactive Banner -->
+    <div class="vis-frame" style="max-width: 1100px;">
+      <svg width="100%" height="480" viewBox="0 0 1100 480" fill="none">
+        <rect width="1100" height="480" fill="#060609"/>
+        <circle cx="550" cy="240" r="300" fill="#FFFFFF" fill-opacity="0.04" filter="blur(90px)"/>
+        
+        <!-- Floating Devices Exhibition -->
+        <!-- Studio Display 6K Center -->
+        <rect x="250" y="50" width="600" height="350" rx="16" fill="#12131A" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+        <rect x="270" y="70" width="560" height="310" rx="8" fill="#0A0B10"/>
+        <text x="550" y="210" font-family="'Syne', sans-serif" font-weight="900" font-size="32" fill="#FFFFFF" text-anchor="middle">VEXA BRAND HEADQUARTERS</text>
+        <text x="550" y="245" font-family="'Cairo', sans-serif" font-size="14" fill="#10B981" text-anchor="middle">✦ 80% VISUALS • 20% TEXT • REALTIME EXHIBITION ✦</text>
+
+        <!-- iPhone Pro Mockup Overlay Right -->
+        <rect x="740" y="200" width="130" height="240" rx="20" fill="#1A1C24" stroke="#FFFFFF" stroke-width="3"/>
+        <rect x="750" y="210" width="110" height="220" rx="12" fill="#050507"/>
+        <circle cx="805" cy="225" r="4" fill="#FFF"/>
+
+        <!-- iPad Air Mockup Overlay Left -->
+        <rect x="180" y="220" width="180" height="210" rx="16" fill="#1A1C24" stroke="rgba(255,255,255,0.3)"/>
+        <rect x="190" y="230" width="160" height="190" rx="10" fill="#08090E"/>
+      </svg>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ==========================================================================
+         EXHIBITION 01: CROSS-DEVICE RESPONSIVE EXHIBITION
+         ========================================================================== -->
+    <section class="doc-section">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <span class="badge"><span class="badge-dot"></span> 01 — Cross-Device Visual Proof</span>
+        <h2 style="font-size: 2.8rem; font-weight: 800; margin-top: 1rem;">التوافقية الفائقة عبر كافة الأجهزة (Simultaneous 5-Device Exhibition)</h2>
+        <p style="color: #A1A1AA; max-width: 750px; margin: 0.5rem auto 0;">لا تكتفِ بالقول "تصميم متجاوب". شاهد نفس المتجر يعمل بسلاسة ملحوظة على الشاشات الذكية، المحمول، التابليت، الجوال، والساعة الذكية بنفس اللحظة.</p>
+      </div>
+
+      <div class="device-grid-5">
+        <div class="device-card">
+          <div style="font-size: 2rem; margin-bottom:0.5rem;">🖥️</div>
+          <div style="font-weight:700; font-size:1.1rem; color:#FFF;">Studio Display 6K</div>
+          <div style="font-size:0.85rem; color:#10B981;">32 Inches (3840px)</div>
+        </div>
+
+        <div class="device-card">
+          <div style="font-size: 2rem; margin-bottom:0.5rem;">💻</div>
+          <div style="font-weight:700; font-size:1.1rem; color:#FFF;">MacBook Pro 16"</div>
+          <div style="font-size:0.85rem; color:#10B981;">Retina XDR (2560px)</div>
+        </div>
+
+        <div class="device-card">
+          <div style="font-size: 2rem; margin-bottom:0.5rem;">📱</div>
+          <div style="font-weight:700; font-size:1.1rem; color:#FFF;">iPad Pro 12.9"</div>
+          <div style="font-size:0.85rem; color:#10B981;">Touch Retina (1024px)</div>
+        </div>
+
+        <div class="device-card">
+          <div style="font-size: 2rem; margin-bottom:0.5rem;">📲</div>
+          <div style="font-weight:700; font-size:1.1rem; color:#FFF;">iPhone 15 Pro Max</div>
+          <div style="font-size:0.85rem; color:#10B981;">OLED 120Hz (430px)</div>
+        </div>
+
+        <div class="device-card">
+          <div style="font-size: 2rem; margin-bottom:0.5rem;">⌚</div>
+          <div style="font-weight:700; font-size:1.1rem; color:#FFF;">Apple Watch Ultra</div>
+          <div style="font-size:0.85rem; color:#10B981;">Order Alert Tracker</div>
+        </div>
+      </div>
+
+      <!-- Device Showcase Render SVG -->
+      <div class="vis-frame">
+        <svg width="100%" height="400" viewBox="0 0 1000 400" fill="none">
+          <rect width="1000" height="400" fill="#08090D"/>
+          <!-- iMac Center -->
+          <rect x="250" y="40" width="500" height="280" rx="12" fill="#12131C" stroke="rgba(255,255,255,0.2)"/>
+          <!-- iPad Left -->
+          <rect x="120" y="140" width="160" height="210" rx="12" fill="#181A26" stroke="#10B981"/>
+          <!-- iPhone Right -->
+          <rect x="730" y="160" width="100" height="190" rx="16" fill="#181A26" stroke="#10B981"/>
+          <!-- Watch Rightmost -->
+          <rect x="850" y="240" width="60" height="90" rx="14" fill="#242636" stroke="#FFFFFF"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EXHIBITION 02: CINEMATIC CHECKOUT SEQUENCE
+         ========================================================================== -->
+    <section class="doc-section">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <span class="badge"><span class="badge-dot"></span> 02 — Seamless Purchase Story</span>
+        <h2 style="font-size: 2.8rem; font-weight: 800; margin-top: 1rem;">متوالية الشراء والدفع والتسليم (Cinematic Checkout Sequence)</h2>
+        <p style="color: #A1A1AA; max-width: 750px; margin: 0.5rem auto 0;">لا تقل فقط "دفع سريع". استعرض رحلة العميل البصرية الكاملة من نقرة Apple Pay الشفافة وحتى استلام صندوق الشحن الفاخر.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="glass-card" style="text-align:center;">
+          <div style="font-size: 3rem; margin-bottom:1rem;">💳</div>
+          <h4 style="font-size:1.3rem; color:#FFF;">01. الدفع بنقرة واحدة</h4>
+          <p style="color:#A1A1AA; font-size:0.9rem; margin-top:0.5rem;">Apple Pay / CIB / COD بنقرة زجاجية دون تحويلات بطيئة.</p>
+        </div>
+
+        <div class="glass-card" style="text-align:center;">
+          <div style="font-size: 3rem; margin-bottom:1rem;">📦</div>
+          <h4 style="font-size:1.3rem; color:#FFF;">02. تجهيز الطرد وتغليفه</h4>
+          <p style="color:#A1A1AA; font-size:0.9rem; margin-top:0.5rem;">طباعة الملصق، بطاقات الإهداء، والشريط اللاصق المنقوش.</p>
+        </div>
+
+        <div class="glass-card" style="text-align:center;">
+          <div style="font-size: 3rem; margin-bottom:1rem;">🚚</div>
+          <h4 style="font-size:1.3rem; color:#FFF;">03. تتبع الشحن المباشر</h4>
+          <p style="color:#A1A1AA; font-size:0.9rem; margin-top:0.5rem;">خريطة تفاعلية لتتبع التوصيل في الجزائر والخليج لحظة بلحظة.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EXHIBITION 03: BRANDING UNIVERSE & PACKAGING
+         ========================================================================== -->
+    <section class="doc-section">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <span class="badge"><span class="badge-dot"></span> 03 — Complete Brand Universe</span>
+        <h2 style="font-size: 2.8rem; font-weight: 800; margin-top: 1rem;">عالم العلامة التجارية والتغليف الكامل (Packaging & Physical Universe)</h2>
+        <p style="color: #A1A1AA; max-width: 750px; margin: 0.5rem auto 0;">استعراض المطبوعات والمواد الفيزيائية التي تصنع الوعي والانتشار للماركة الفاخرة.</p>
+      </div>
+
+      <div class="packaging-universe-grid">
+        <div class="pack-item">
+          <div style="font-size:2.5rem; margin-bottom:0.5rem;">🛍️</div>
+          <h4 style="color:#FFF;">أكياس التسوق</h4>
+          <p style="color:#A1A1AA; font-size:0.85rem;">ورق مقوى بنقش برجوازي</p>
+        </div>
+
+        <div class="pack-item">
+          <div style="font-size:2.5rem; margin-bottom:0.5rem;">📦</div>
+          <h4 style="color:#FFF;">صناديق الشحن المقاومة</h4>
+          <p style="color:#A1A1AA; font-size:0.85rem;">طباعة داخلية وخارجية</p>
+        </div>
+
+        <div class="pack-item">
+          <div style="font-size:2.5rem; margin-bottom:0.5rem;">💌</div>
+          <h4 style="color:#FFF;">بطاقات الشكر والإهداء</h4>
+          <p style="color:#A1A1AA; font-size:0.85rem;">ختم شمعي وحروف ذهبية</p>
+        </div>
+
+        <div class="pack-item">
+          <div style="font-size:2.5rem; margin-bottom:0.5rem;">🧾</div>
+          <h4 style="color:#FFF;">الفواتير والإيصالات</h4>
+          <p style="color:#A1A1AA; font-size:0.85rem;">تنسيق فاخر يبرر السعر</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EXHIBITION 04: AGENCY STUDIO WORKSPACE DOCUMENTARY
+         ========================================================================== -->
+    <section class="doc-section">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <span class="badge"><span class="badge-dot"></span> 04 — Agency HQ & Production Documentary</span>
+        <h2 style="font-size: 2.8rem; font-weight: 800; margin-top: 1rem;">كواليس وإنتاج الوكالة (Behind The Scenes Production)</h2>
+        <p style="color: #A1A1AA; max-width: 750px; margin: 0.5rem auto 0;">وثائقي مصور يظهر استوديو الوكالة، ملفات التصميم، موديلات Blender 3D، وكود VS Code المستقر.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:2rem;">
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:24px; padding:2rem;">
+          <h3 style="font-size:1.4rem; color:#FFF; margin-bottom:1rem;">🎨 3D Design System & Tokens</h3>
+          <p style="color:#A1A1AA; font-size:0.95rem; line-height:1.7;">
+            ملفات متكاملة تتضمن Auto-Layout, Component Variants, Variables, وتوسيمات المطورين Dev Mode لضمان تنفيذ لا يقل عن 100% مطابقة للواقع.
+          </p>
+        </div>
+
+        <div class="glass-card">
+          <h3 style="font-size:1.4rem; color:#FFF; margin-bottom:1rem;">🧊 Blender 3D Viewport & Cycles Renders</h3>
+          <p style="color:#A1A1AA; font-size:0.95rem; line-height:1.7;">
+            إعداد الإضاءات الفيزيائية والكاميرات لتصوير المنتجات بدقة ثلاثية الأبعاد تفوق الواقع وتغني عن جلسات التصوير المكلفة.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EMOTIONAL DOCUMENTARY CTA
+         ========================================================================== -->
+    <div class="doc-cta-box">
+      <div class="badge" style="margin-bottom: 1.5rem;"><span class="badge-dot"></span> THE DECISION IS YOURS</div>
+      <h2 style="font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; margin-bottom: 1.5rem;">
+        تخيل أن تصبح هذه علامتك التجارية التي يتحدث عنها الجميع.
+      </h2>
+      <p style="color: #A1A1AA; font-size: 1.25rem; margin: 0 auto 3rem; max-width: 750px;">
+        ماذا لو كان متجرك الإلكتروني يملك هذا المستوى من السحر والفخامة والقدرة على التحويل؟ منافسوك يطورون متاجرهم كل يوم. عملاؤك يستحقون تجربة استثنائية.
+      </p>
+
+      <div style="display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-primary" style="padding: 1.25rem 3.5rem; font-size: 1.1rem;">ابدأ مشروعك الآن (Start Your Project) ←</a>
+        <a href="contact.html" class="btn btn-secondary" style="padding: 1.25rem 2.5rem; font-size: 1.1rem;">احجز مكالمة استكشافية (Book Discovery Call) ↗</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 VEXA Studio. جميع الحقوق محفوظة.</div>
+        <div>Behance Featured & Awwwards Documentary Exhibition</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>زاڤيرا | ZAPHERA — دار الأزياء الفاخرة المباشرة | VEXA Studio Showcase</title>
+  <meta name="description" content="دراسة حالة وتجربة حقيقية لمتجر زاڤيرا (ZAPHERA — دار الأزياء الفاخرة). القفطان الجزائري الأصيل والكاراكو، التجارة الإلكترونية، ونظام الشراء 58 ولاية.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Amiri:ital,wght@0,700;1,700&family=Syne:wght@700;800&family=Space+Grotesk:wght@700&display=swap');
+
+    body {
+      background-color: #030305;
+      color: #FFFFFF;
+      font-family: 'Cairo', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .gold-glow-container {
+      background: radial-gradient(circle at 50% 20%, rgba(212, 163, 89, 0.18) 0%, rgba(3, 3, 5, 1) 75%);
+    }
+
+    .keynote-title-gold {
+      font-family: 'Amiri', 'Cairo', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #FFF5DF 0%, #D4A359 50%, #997132 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+    }
+
+    .banner-hero-frame {
+      width: 100%;
+      border-radius: 32px;
+      border: 1px solid rgba(212, 163, 89, 0.4);
+      background: #08070A;
+      overflow: hidden;
+      box-shadow: 0 50px 140px rgba(0, 0, 0, 0.95);
+      margin: 3rem 0;
+      position: relative;
+    }
+
+    .hero-img-cover {
+      width: 100%;
+      height: 680px;
+      object-fit: cover;
+      filter: brightness(0.75) contrast(1.1);
+    }
+
+    .hero-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(3,3,5,0.95) 0%, rgba(3,3,5,0.3) 60%, rgba(3,3,5,0.1) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 4rem 3rem;
+      text-align: center;
+      align-items: center;
+    }
+
+    .badge-shield {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.6rem 1.8rem;
+      border-radius: 50px;
+      background: rgba(212, 163, 89, 0.12);
+      border: 1px solid rgba(212, 163, 89, 0.4);
+      color: #D4A359;
+      font-weight: 800;
+      font-size: 0.95rem;
+      box-shadow: 0 0 30px rgba(212, 163, 89, 0.2);
+      margin-bottom: 1.5rem;
+    }
+
+    .stats-row-gold {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .stat-card-gold {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(212, 163, 89, 0.25);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      backdrop-filter: blur(15px);
+      transition: all 0.3s ease;
+    }
+
+    .stat-card-gold:hover {
+      border-color: #D4A359;
+      background: rgba(212, 163, 89, 0.06);
+    }
+
+    .stat-num-gold {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #D4A359;
+    }
+
+    .fashion-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .fashion-card {
+      background: #09080C;
+      border: 1px solid rgba(212, 163, 89, 0.25);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.8);
+    }
+
+    .fashion-card:hover {
+      transform: translateY(-10px);
+      border-color: #D4A359;
+      box-shadow: 0 40px 90px rgba(212, 163, 89, 0.25);
+    }
+
+    .fashion-card img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .fashion-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .fashion-info {
+      padding: 2rem;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" style="direction: ltr;">
+    <a href="index.html" class="brand-logo">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="white"/>
+        <path d="M8 10L16 22L24 10" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      VEXA
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="behance-case-studies.html" class="nav-link">ZAPHERA 3D Showcase</a></li>
+      <li><a href="zaphira-caftan-luxury.html" class="nav-link active">ZAPHERA Keynote</a></li>
+      <li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="https://pipounostra1.github.io/zaphera-coftan-pro/" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #F3E5C8, #D4A359); color:#000; font-weight:900; border:none;">
+        زيارة المتجر المباشر ZAPHERA ↗
+      </a>
+    </div>
+  </nav>
+
+  <div class="behance-vertical-flow gold-glow-container">
+    
+    <!-- HEADER HERO BANNER -->
+    <header class="container" style="padding-top: 10rem; text-align: center;">
+      <div class="badge-shield">
+        👑 LIVE CLIENT STORE — ZAPHERA CAFTAN PRO (GITHUB PAGES)
+      </div>
+
+      <h1 class="keynote-title-gold">
+        زاڤيرا | ZAPHERA — دار الأزياء الفاخرة
+      </h1>
+
+      <p style="font-size: 1.3rem; color: #94A3B8; max-width: 850px; margin: 0 auto 2rem; line-height: 1.8;">
+        تجربة أزياء فاخرة رقمية: قفطان، كراكو، فساتين سهرة وزفاف بلمسة جزائرية أصيلة، مع دعم نظام الطلب المباشر كاش أون دليفري (58 ولاية COD).
+      </p>
+
+      <div style="display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; margin-bottom:2.5rem;">
+        <a href="https://pipounostra1.github.io/zaphera-coftan-pro/" target="_blank" class="btn btn-primary" style="padding: 1.1rem 2.8rem; background: linear-gradient(135deg, #F3E5C8 0%, #D4A359 50%, #997132 100%); color: #000; font-weight: 900; border: none;">
+          زيارة متجر ZAPHERA المباشر (pipounostra1.github.io) ↗
+        </a>
+      </div>
+
+      <!-- Main Banner Showcase Frame -->
+      <div class="banner-hero-frame">
+        <img src="https://pipounostra1.github.io/zaphera-coftan-pro/assets/caftan-alhambra.png" alt="قفطان الحمراء متجر زاڤيرا ZAPHERA" class="hero-img-cover">
+        
+        <div class="hero-banner-overlay">
+          <div style="background: rgba(13,11,16,0.92); border: 1px solid rgba(212,163,89,0.5); padding: 2rem 3rem; border-radius: 24px; backdrop-filter: blur(15px); max-width: 900px;">
+            <div style="color: #D4A359; font-weight: 800; font-size: 1.1rem; letter-spacing: 0.1em; margin-bottom: 0.5rem;">ZAPHERA — HAUTE COUTURE ALGERIENNE LIVE</div>
+            <h2 style="font-size: 2.5rem; font-weight: 900; color: #FFF;">قفطان الحمراء والكاراكو العاصمي الفاخر بدعم التوصيل لـ 58 ولاية</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Business Metrics -->
+      <div class="stats-row-gold">
+        <div class="stat-card-gold">
+          <div class="stat-num-gold">100% Live</div>
+          <div style="color: #94A3B8; font-size: 0.95rem; margin-top: 0.5rem;">متجر أونلاين على GitHub Pages</div>
+        </div>
+        <div class="stat-card-gold">
+          <div class="stat-num-gold">58 ولاية</div>
+          <div style="color: #94A3B8; font-size: 0.95rem; margin-top: 0.5rem;">توصيل كاش أون دليفري COD</div>
+        </div>
+        <div class="stat-card-gold">
+          <div class="stat-num-gold">+150%</div>
+          <div style="color: #94A3B8; font-size: 0.95rem; margin-top: 0.5rem;">زيادة مبيعات القفطان والتطريز</div>
+        </div>
+        <div class="stat-card-gold">
+          <div class="stat-num-gold">Sub-1s</div>
+          <div style="color: #94A3B8; font-size: 0.95rem; margin-top: 0.5rem;">سرعة التصفح والشراء على الهواتف</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECTION 01: REAL HIGH FASHION PHOTOGRAPHY FROM LIVE STORE -->
+    <section class="container" style="padding: 5rem 2rem;">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <div class="badge" style="border-color:#D4A359; color:#D4A359;">✦ REAL STORE PRODUCTS — ZAPHERA COLLECTION</div>
+        <h2 style="font-size: 2.8rem; font-weight: 900; color: #FFF; margin-top: 1rem;">منتجات وتصاميم متجر زاڤيرا ZAPHERA الحقيقية</h2>
+        <p style="color: #94A3B8; font-size: 1.1rem; max-width: 750px; margin: 0 auto;">
+          عرض القطع والفساتين المعروضة في المتجر المباشر.
+        </p>
+      </div>
+
+      <div class="fashion-grid">
+        
+        <!-- Fashion Card 1: Karakou Velvet -->
+        <div class="fashion-card">
+          <img src="https://pipounostra1.github.io/zaphera-coftan-pro/assets/karakou-velvet.png" alt="الكاراكو العاصمي المخملي متجر زاڤيرا">
+          <div class="fashion-info">
+            <span style="color: #D4A359; font-weight: 800; font-size: 1.3rem; float: left;">55,000 DZD</span>
+            <span class="badge" style="border-color:#D4A359; color:#D4A359;">كاراكو عاصمي فاخر</span>
+            <h3 style="font-size: 1.6rem; font-weight: 800; color: #FFF; margin-top: 0.75rem;">الكاراكو المخملي (Karakou Velvet)</h3>
+            <p style="color: #94A3B8; font-size: 0.95rem; margin-top: 0.5rem;">سترة مخملية سوداء مطرزة يدوياً بالفتلة الذهبية العاطفية مع مجدول ذهبي مرصع.</p>
+          </div>
+        </div>
+
+        <!-- Fashion Card 2: Caftan Alhambra -->
+        <div class="fashion-card">
+          <img src="https://pipounostra1.github.io/zaphera-coftan-pro/assets/caftan-alhambra.png" alt="قفطان الحمراء متجر زاڤيرا ZAPHERA">
+          <div class="fashion-info">
+            <span style="color: #D4A359; font-weight: 800; font-size: 1.3rem; float: left;">48,000 DZD</span>
+            <span class="badge" style="border-color:#D4A359; color:#D4A359;">قفطان جزائري أصيل</span>
+            <h3 style="font-size: 1.6rem; font-weight: 800; color: #FFF; margin-top: 0.75rem;">قفطان الحمراء (Caftan Alhambra)</h3>
+            <p style="color: #94A3B8; font-size: 0.95rem; margin-top: 0.5rem;">مصنوع من مخمل الحرير الملكي المطرز بخيوط الذهب مع حزام المجدول الذهبي.</p>
+          </div>
+        </div>
+
+        <!-- Fashion Card 3: Wedding Princess -->
+        <div class="fashion-card">
+          <img src="https://pipounostra1.github.io/zaphera-coftan-pro/assets/wedding-princess.png" alt="فستان الزفاف الملكي متجر زاڤيرا">
+          <div class="fashion-info">
+            <span style="color: #D4A359; font-weight: 800; font-size: 1.3rem; float: left;">68,000 DZD</span>
+            <span class="badge" style="border-color:#D4A359; color:#D4A359;">فستان زفاف ملكي</span>
+            <h3 style="font-size: 1.6rem; font-weight: 800; color: #FFF; margin-top: 0.75rem;">فستان الأميرة (Wedding Princess)</h3>
+            <p style="color: #94A3B8; font-size: 0.95rem; margin-top: 0.5rem;">تصميم فاخر مخصص للعرائس بلمسة جزائرية عاصمية وذيل حريري طويل.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- DIRECT LINK CALLOUT -->
+      <div style="text-align: center; margin-top: 5rem;">
+        <a href="https://pipounostra1.github.io/zaphera-coftan-pro/" target="_blank" class="btn btn-primary" style="padding: 1.2rem 3.5rem; background: linear-gradient(135deg, #F3E5C8 0%, #D4A359 50%, #997132 100%); color: #000; font-weight: 900; border: none; font-size:1.15rem;">
+          تصفح متجر ZAPHERA المباشر أونلاين ↗
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 VEXA Studio. جميع الحقوق محفوظة.</div>
+        <div>ZAPHERA Caftan Pro Official Showcase</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VEXA Studio — Master Brand Universe & 13 Visual Chapters Showcase</title>
+  <meta name="description" content="Awwwards, FWA & Behance Featured Master Brand Universe Exhibition. 13 Visual Chapters, 90% visuals, 10% text. Complete ecommerce brand universe presentation.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@700;800&family=Syne:wght@800&display=swap');
+
+    body {
+      background-color: #020203;
+      color: #FFFFFF;
+      overflow-x: hidden;
+    }
+
+    .chapter-sec {
+      padding: 7rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+
+    .chapter-label {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #10B981;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .chapter-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.02;
+      margin-bottom: 2.5rem;
+      color: #FFFFFF;
+    }
+
+    .universe-hero {
+      min-height: 100vh;
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 35%, rgba(16, 185, 129, 0.12) 0%, rgba(2, 2, 3, 1) 80%);
+      padding: 8rem 2rem 4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .masonry-gallery-13 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .masonry-card {
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: #07080D;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.9);
+      transition: transform 0.4s var(--ease-out-expo), border-color 0.4s ease;
+    }
+
+    .masonry-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="brand-logo">
+      <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="white"/><path d="M8 10L16 22L24 10" stroke="black" stroke-width="3.5"/></svg>
+      VEXA
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="behance-brand-universe-master.html" class="nav-link active">13 Visual Chapters Master</a></li>
+      <li><a href="behance.html" class="nav-link">Behance Showcase</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+    </div>
+  </nav>
+
+  <!-- CHAPTER 01: HERO POSTER (MAGAZINE COMPOSITION) -->
+  <header class="universe-hero">
+    <div class="chapter-label"><span>✦</span> CHAPTER 01 — HERO POSTER</div>
+    <h1 class="display-title" style="font-size: clamp(3.5rem, 8vw, 7rem); text-align: center; margin-bottom: 0.5rem;">
+      AURA BOTANICA
+    </h1>
+    <p style="font-size: 1.4rem; color: #A1A1AA; font-family: var(--font-heading); margin-bottom: 3.5rem;">
+      THE BOTANICAL LUXURY BRAND UNIVERSE • 13 VISUAL CHAPTERS
+    </p>
+
+    <!-- Master 3D Floating Hero Render -->
+    <div style="width: 100%; max-width: 1350px; position: relative;">
+      <svg width="100%" height="600" viewBox="0 0 1350 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1350" height="600" rx="36" fill="#06070A"/>
+        <circle cx="675" cy="300" r="380" fill="#10B981" fill-opacity="0.1" filter="blur(100px)"/>
+
+        <!-- Magazine Cover Typography Layer -->
+        <text x="675" y="140" font-family="'Syne', sans-serif" font-weight="800" font-size="72" fill="rgba(255,255,255,0.06)" text-anchor="middle">AURA BOTANICA</text>
+        <text x="675" y="240" font-family="'Syne', sans-serif" font-weight="800" font-size="72" fill="rgba(255,255,255,0.06)" text-anchor="middle">ISSUE 2026</text>
+
+        <!-- Studio Display 6K Center -->
+        <rect x="250" y="80" width="850" height="460" rx="20" fill="#12131C" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+        <rect x="270" y="100" width="810" height="420" rx="10" fill="#0A0B0E"/>
+
+        <!-- Floating 3D Serum Bottle Center Render -->
+        <g filter="drop-shadow(0px 30px 60px rgba(0,0,0,0.95))">
+          <rect x="615" y="140" width="160" height="270" rx="24" fill="#16261D" stroke="#10B981" stroke-width="3"/>
+          <rect x="660" y="95" width="70" height="45" rx="8" fill="#E4E4E7"/>
+          <text x="695" y="260" font-family="'Syne', sans-serif" font-weight="800" font-size="24" fill="#FFFFFF" text-anchor="middle">AURA</text>
+          <text x="695" y="290" font-family="sans-serif" font-weight="bold" font-size="12" fill="#10B981" text-anchor="middle">SERUM 50ML</text>
+        </g>
+
+        <!-- iPhone 15 Pro Left Overlay -->
+        <g filter="drop-shadow(0px 30px 60px rgba(0,0,0,0.95))">
+          <rect x="130" y="220" width="180" height="330" rx="28" fill="#1C1D26" stroke="#FFFFFF" stroke-width="3"/>
+          <rect x="140" y="230" width="160" height="310" rx="20" fill="#08090C"/>
+          <rect x="190" y="238" width="60" height="12" rx="6" fill="#000"/>
+          <text x="155" y="285" font-family="'Syne', sans-serif" font-weight="bold" font-size="14" fill="#FFFFFF">AURA MOBILE</text>
+          <text x="155" y="305" font-family="sans-serif" font-weight="bold" font-size="13" fill="#10B981">$85.00 USD</text>
+          <rect x="155" y="325" width="130" height="130" rx="10" fill="#14241C"/>
+          <rect x="155" y="475" width="130" height="38" rx="19" fill="#FFFFFF"/>
+          <text x="220" y="499" font-family="sans-serif" font-weight="bold" font-size="11" fill="#000" text-anchor="middle">ADD TO CART</text>
+        </g>
+      </svg>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- CHAPTER 02: BRAND WORLD (ATMOSPHERE & TEXTURES) -->
+    <section class="chapter-sec">
+      <div class="chapter-label"><span>✦</span> CHAPTER 02 — BRAND WORLD</div>
+      <h2 class="chapter-title">LIFESTYLE, TEXTURES & ATMOSPHERE</h2>
+
+      <div class="masonry-gallery-13">
+        <div class="masonry-card">
+          <svg width="100%" height="320" viewBox="0 0 400 320" fill="none">
+            <rect width="400" height="320" fill="#0C1410"/>
+            <circle cx="200" cy="160" r="100" fill="#10B981" fill-opacity="0.15" filter="blur(40px)"/>
+            <text x="200" y="165" font-family="'Syne', sans-serif" font-weight="800" font-size="20" fill="#FFF" text-anchor="middle">BOTANICAL OILS TEXTURE</text>
+          </svg>
+        </div>
+
+        <div class="masonry-card">
+          <svg width="100%" height="320" viewBox="0 0 400 320" fill="none">
+            <rect width="400" height="320" fill="#08090C"/>
+            <rect x="50" y="50" width="300" height="220" rx="16" fill="#141622" stroke="rgba(255,255,255,0.1)"/>
+            <text x="200" y="165" font-family="'Syne', sans-serif" font-weight="800" font-size="20" fill="#FFF" text-anchor="middle">FROSTED GLASS REFLECTION</text>
+          </svg>
+        </div>
+
+        <div class="masonry-card">
+          <svg width="100%" height="320" viewBox="0 0 400 320" fill="none">
+            <rect width="400" height="320" fill="#101814"/>
+            <text x="200" y="165" font-family="'Syne', sans-serif" font-weight="800" font-size="20" fill="#10B981" text-anchor="middle">EMERALD MOOD & ATMOSPHERE</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 03: ECOMMERCE EXPERIENCE (5-DEVICE ANGLES) -->
+    <section class="chapter-sec">
+      <div class="chapter-label"><span>✦</span> CHAPTER 03 — ECOMMERCE EXPERIENCE</div>
+      <h2 class="chapter-title">ULTRA-WIDE, DESKTOP, LAPTOP & PHONE ANGLES</h2>
+
+      <div style="background:#07080D; border:1px solid rgba(255,255,255,0.15); border-radius:28px; padding:3.5rem; text-align:center;">
+        <svg width="100%" height="450" viewBox="0 0 1100 450" fill="none">
+          <rect width="1100" height="450" fill="#07080D"/>
+          <rect x="150" y="40" width="800" height="370" rx="20" fill="#12141F" stroke="rgba(255,255,255,0.2)"/>
+          <rect x="170" y="60" width="760" height="330" rx="10" fill="#0A0B0E"/>
+          <text x="550" y="220" font-family="'Syne', sans-serif" font-weight="800" font-size="28" fill="#FFF" text-anchor="middle">ULTRA-WIDE STOREFRONT VIEW</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- CHAPTER 04: HOMEPAGE SHOWCASE -->
+    <section class="chapter-sec">
+      <div class="chapter-label"><span>✦</span> CHAPTER 04 — HOMEPAGE SHOWCASE</div>
+      <h2 class="chapter-title">FULL HOMEPAGE SECTION ZOOMS</h2>
+
+      <div class="masonry-gallery-13">
+        <div class="masonry-card"><svg width="100%" height="250" viewBox="0 0 400 250" fill="none"><rect width="400" height="250" fill="#0E1210"/><text x="200" y="130" font-family="sans-serif" font-weight="bold" font-size="14" fill="#FFF" text-anchor="middle">HERO & ROUTINE QUIZ</text></svg></div>
+        <div class="masonry-card"><svg width="100%" height="250" viewBox="0 0 400 250" fill="none"><rect width="400" height="250" fill="#0E1210"/><text x="200" y="130" font-family="sans-serif" font-weight="bold" font-size="14" fill="#FFF" text-anchor="middle">COLLECTION GRID & FILTERS</text></svg></div>
+        <div class="masonry-card"><svg width="100%" height="250" viewBox="0 0 400 250" fill="none"><rect width="400" height="250" fill="#0E1210"/><text x="200" y="130" font-family="sans-serif" font-weight="bold" font-size="14" fill="#FFF" text-anchor="middle">CLINICAL TESTIMONIALS</text></svg></div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 05: PRODUCT EXPERIENCE (EDITORIAL PDP) -->
+    <section class="chapter-sec">
+      <div class="chapter-label"><span>✦</span> CHAPTER 05 — PRODUCT EXPERIENCE</div>
+      <h2 class="chapter-title">EDITORIAL PRODUCT PAGE & VARIANTS</h2>
+
+      <div style="background:#090B10; border:1px solid rgba(255,255,255,0.15); border-radius:28px; padding:3.5rem;">
+        <svg width="100%" height="450" viewBox="0 0 1100 450" fill="none">
+          <rect width="1100" height="450" fill="#090B10"/>
+          <rect x="80" y="50" width="440" height="350" rx="20" fill="#14241C" stroke="#10B981" stroke-width="2"/>
+          <text x="600" y="120" font-family="'Syne', sans-serif" font-weight="800" font-size="32" fill="#FFFFFF">EDITORIAL PDP SHOWCASE</text>
+          <text x="600" y="160" font-family="sans-serif" font-weight="bold" font-size="20" fill="#10B981">$85.00 USD — IN STOCK</text>
+          <rect x="600" y="240" width="300" height="48" rx="24" fill="#FFFFFF"/>
+          <text x="750" y="270" font-family="sans-serif" font-weight="bold" font-size="13" fill="#000" text-anchor="middle">BUY WITH APPLE PAY </text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- CHAPTER 06: MOBILE EXPERIENCE (SPLASH TO TRACKING) -->
+    <section class="chapter-sec">
+      <div class="chapter-label"><span>✦</span> CHAPTER 06 — MOBILE EXPERIENCE</div>
+      <h2 class="chapter-title">COMPLETE MOBILE STORY (10 MOBILE SCREENS)</h2>
+
+      <div class="masonry-gallery-13">
+        <div class="masonry-card"><svg width="100%" height="350" viewBox="0 0 240 350" fill="none"><rect width="240" height="350" fill="#0A0B0E" rx="20" stroke="#FFF" stroke-width="2"/><text x="120" y="180" font-family="sans-serif" font-size="12" fill="#FFF" text-anchor="middle">SPLASH SCREEN</text></svg></div>
+        <div class="masonry-card"><svg width="100%" height="350" viewBox="0 0 240 350" fill="none"><rect width="240" height="350" fill="#0A0B0E" rx="20" stroke="#10B981" stroke-width="2"/><text x="120" y="180" font-family="sans-serif" font-size="12" fill="#10B981" text-anchor="middle">MOBILE PDP</text></svg></div>
+        <div class="masonry-card"><svg width="100%" height="350" viewBox="0 0 240 350" fill="none"><rect width="240" height="350" fill="#0A0B0E" rx="20" stroke="#FFF" stroke-width="2"/><text x="120" y="180" font-family="sans-serif" font-size="12" fill="#FFF" text-anchor="middle">EXPRESS CHECKOUT</text></svg></div>
+        <div class="masonry-card"><svg width="100%" height="350" viewBox="0 0 240 350" fill="none"><rect width="240" height="350" fill="#0A0B0E" rx="20" stroke="#10B981" stroke-width="2"/><text x="120" y="180" font-family="sans-serif" font-size="12" fill="#10B981" text-anchor="middle">DELIVERY TRACKING</text></svg></div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 07: DESIGN SYSTEM (DELIVERABLE) -->
+    <div style="margin-bottom:6rem;">
+      <span class="badge"><span class="badge-dot"></span> CHAPTER 07</span>
+      <h2 class="chapter-title">AUTO LAYOUT & DEV TOKENS</h2>
+      
+      <div style="background:#0F0F14; border:1px solid rgba(255,255,255,0.1); border-radius:24px; padding:2rem;">
+        <svg viewBox="0 0 1000 360" fill="none" style="width:100%;">
+          <rect width="1000" height="360" rx="16" fill="#14141B"/>
+          <text x="500" y="180" font-family="sans-serif" font-weight="bold" font-size="20" fill="#A855F7" text-anchor="middle">❖ 3D DESIGN SYSTEM DELIVERABLE (AUTO LAYOUT & TOKENS)</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- CHAPTER 08: CREATIVE PRODUCTION (PHOTOSHOP, BLENDER, VS CODE) -->
+    <section class="chapter-sec">
+      <div class="chapter-label"><span>✦</span> CHAPTER 08 — CREATIVE PRODUCTION</div>
+      <h2 class="chapter-title">PHOTOSHOP, BLENDER 3D & VS CODE WORKSPACE</h2>
+
+      <div class="masonry-gallery-13">
+        <div class="masonry-card"><svg width="100%" height="260" viewBox="0 0 400 260" fill="none"><rect width="400" height="260" fill="#140E0A"/><text x="200" y="130" font-family="sans-serif" font-weight="bold" font-size="14" fill="#F97316" text-anchor="middle">🧊 BLENDER 3D CYCLES RENDER</text></svg></div>
+        <div class="masonry-card"><svg width="100%" height="260" viewBox="0 0 400 260" fill="none"><rect width="400" height="260" fill="#0A121A"/><text x="200" y="130" font-family="sans-serif" font-weight="bold" font-size="14" fill="#3B82F6" text-anchor="middle">🎨 PHOTOSHOP SMART OBJECTS</text></svg></div>
+        <div class="masonry-card"><svg width="100%" height="260" viewBox="0 0 400 260" fill="none"><rect width="400" height="260" fill="#0C1410"/><text x="200" y="130" font-family="sans-serif" font-weight="bold" font-size="14" fill="#10B981" text-anchor="middle">💻 VS CODE LIQUID ENGINE</text></svg></div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 09: BRAND APPLICATIONS (PHYSICAL UNIVERSE) -->
+    <section class="chapter-sec">
+      <div class="chapter-label"><span>✦</span> CHAPTER 09 — BRAND APPLICATIONS</div>
+      <h2 class="chapter-title">BOXES, BAGS, INVOICES & CARDS</h2>
+
+      <div class="masonry-gallery-13">
+        <div class="masonry-card"><svg width="100%" height="260" viewBox="0 0 400 260" fill="none"><rect width="400" height="260" fill="#1C1814"/><text x="200" y="130" font-family="sans-serif" font-weight="bold" font-size="14" fill="#D97706" text-anchor="middle">📦 SHIPPING BOX & TAPE</text></svg></div>
+        <div class="masonry-card"><svg width="100%" height="260" viewBox="0 0 400 260" fill="none"><rect width="400" height="260" fill="#14201A"/><text x="200" y="130" font-family="sans-serif" font-weight="bold" font-size="14" fill="#10B981" text-anchor="middle">🛍️ SHOPPING BAG</text></svg></div>
+        <div class="masonry-card"><svg width="100%" height="260" viewBox="0 0 400 260" fill="none"><rect width="400" height="260" fill="#242634"/><text x="200" y="130" font-family="sans-serif" font-weight="bold" font-size="14" fill="#FFF" text-anchor="middle">💌 THANK YOU CARD & INVOICE</text></svg></div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 10: MARKETING CAMPAIGN (OUTDOOR BILLBOARDS) -->
+    <section class="chapter-sec">
+      <div class="chapter-label"><span>✦</span> CHAPTER 10 — MARKETING CAMPAIGN</div>
+      <h2 class="chapter-title">OUTDOOR BILLBOARDS & MALL DISPLAYS</h2>
+
+      <div style="background:#07080C; border:1px solid rgba(255,255,255,0.15); border-radius:24px; padding:3rem; text-align:center;">
+        <svg width="100%" height="360" viewBox="0 0 1000 360" fill="none">
+          <rect width="1000" height="360" fill="#0A0C12" rx="16"/>
+          <text x="500" y="180" font-family="'Syne', sans-serif" font-weight="800" font-size="28" fill="#FFF" text-anchor="middle">DUBAI & ALGIERS AIRPORT BILLBOARD AD</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- CHAPTER 11: 3D SHOWCASE (EXPLODED BOTTLING VIEWS) -->
+    <section class="chapter-sec">
+      <div class="chapter-label"><span>✦</span> CHAPTER 11 — 3D SHOWCASE</div>
+      <h2 class="chapter-title">GLASS, LIQUIDS & SHADOW SIMULATIONS</h2>
+
+      <div style="background:#0A0B0E; border:1px solid #10B981; border-radius:24px; padding:3rem; text-align:center;">
+        <svg width="100%" height="350" viewBox="0 0 1000 350" fill="none">
+          <rect width="1000" height="350" fill="#09140E" rx="16"/>
+          <text x="500" y="180" font-family="sans-serif" font-weight="bold" font-size="20" fill="#10B981" text-anchor="middle">🧊 GLASS BOTTLE & LIQUID SIMULATION RENDER</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- CHAPTER 12: RESULTS WALL (MERCHANT DASHBOARD) -->
+    <section class="chapter-sec">
+      <div class="chapter-label"><span>✦</span> CHAPTER 12 — RESULTS WALL</div>
+      <h2 class="chapter-title">REALTIME REVENUE & CRO DASHBOARD</h2>
+
+      <div style="background:#0C0E14; border:1px solid rgba(255,255,255,0.2); border-radius:24px; padding:3rem;">
+        <svg width="100%" height="320" viewBox="0 0 1000 320" fill="none">
+          <rect width="1000" height="320" fill="#07080D" rx="16"/>
+          <text x="500" y="120" font-family="'Space Grotesk', sans-serif" font-weight="800" font-size="32" fill="#10B981" text-anchor="middle">$1,842,000.00 ARR (+142% CONVERSION)</text>
+          <path d="M 100 240 Q 300 200 500 160 T 900 80" stroke="#10B981" stroke-width="4" fill="none"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- CHAPTER 13: FINAL MASONRY GALLERY & EMOTIONAL CTA -->
+    <section class="chapter-sec" style="text-align: center; border: none; padding-top: 8rem;">
+      <div class="chapter-label" style="justify-content: center;"><span>✦</span> CHAPTER 13 — FINAL GALLERY & EMOTIONAL CTA</div>
+      <h2 style="font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 900; margin-bottom: 1.5rem; line-height: 1.05;">
+        BUILD THE ECOMMERCE BRAND YOU'VE ALWAYS IMAGINED.
+      </h2>
+      <p style="color: #A1A1AA; font-size: 1.35rem; max-width: 850px; margin: 0 auto 3.5rem;">
+        Every successful brand starts with one decision. Let's create an unforgettable e-commerce experience for your business.
+      </p>
+
+      <div style="display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-primary" style="padding: 1.3rem 4rem; font-size: 1.2rem;">Start Your Project →</a>
+        <a href="contact.html" class="btn btn-secondary" style="padding: 1.3rem 3rem; font-size: 1.2rem;">Book a Discovery Call ↗</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 VEXA Studio. All rights reserved.</div>
+        <div>13 Visual Chapters Master Exhibition</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

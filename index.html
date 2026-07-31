@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VEXA Studio — الخدمة المتكاملة الشاملة لتطوير المتاجر وصفحات الهبوط</title>
+  <meta name="description" content="نقدم الخدمة الشاملة والمتكاملة 100% لتطوير المتاجر الإلكترونية وصفحات الهبوط: من التصميم الفاخر، الربط لـ 58 ولاية، تتبع البكسل الرباعي، وحتى إطلاقه وحصد المبيعات.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=Fira+Code:wght@500;700&display=swap');
+    
+    body {
+      background-color: #020203;
+      font-family: 'Cairo', var(--font-body), sans-serif;
+      color: #FFFFFF;
+      text-align: right;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Glow Background */
+    .hero-glow-bg {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 900px;
+      background: radial-gradient(circle at 50% 18%, rgba(168, 85, 247, 0.18) 0%, rgba(16, 185, 129, 0.08) 40%, rgba(2, 2, 3, 0) 75%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .main-wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-clean-sec {
+      padding-top: 11rem;
+      padding-bottom: 4rem;
+      text-align: center;
+    }
+
+    .brand-identity-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(255, 255, 255, 0.03) 100%);
+      border: 1px solid rgba(168, 85, 247, 0.4);
+      color: #D8B4FE;
+      padding: 0.65rem 1.8rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 35px rgba(168, 85, 247, 0.25);
+    }
+
+    .hero-headline-identity {
+      font-size: clamp(2.8rem, 6.2vw, 5.2rem);
+      font-weight: 900;
+      line-height: 1.14;
+      margin-bottom: 1.6rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subheadline-identity {
+      font-size: 1.3rem;
+      color: #A1A1AA;
+      max-width: 880px;
+      margin: 0 auto 3.2rem;
+      line-height: 1.9;
+    }
+
+    /* FULL TURNKEY SERVICE 8 PILLARS GRID */
+    .turnkey-service-section {
+      background: linear-gradient(145deg, rgba(168, 85, 247, 0.12) 0%, rgba(10, 12, 18, 0.95) 100%);
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      border-radius: 36px;
+      padding: 4rem 3rem;
+      margin: 4rem 0 6rem;
+      backdrop-filter: blur(20px);
+    }
+
+    .turnkey-grid-8 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .turnkey-pillar-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      padding: 2.2rem 1.8rem;
+      transition: all 0.3s ease;
+    }
+
+    .turnkey-pillar-card:hover {
+      border-color: rgba(168, 85, 247, 0.5);
+      transform: translateY(-5px);
+    }
+
+    .pillar-icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid #A855F7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    /* MINIMALIST LUXURY STORE CARDS GRID */
+    .luxury-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin: 3.5rem 0 6rem;
+    }
+
+    .luxury-store-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 28px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .luxury-store-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(168, 85, 247, 0.4);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+    }
+
+    .card-img-wrapper {
+      width: 100%;
+      height: 260px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .luxury-store-card:hover .card-img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .card-content-body {
+      padding: 2.2rem 2rem;
+    }
+
+    .card-tag-pill {
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+      display: inline-block;
+    }
+
+    .card-title-head {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-desc-text {
+      color: #A1A1AA;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+    }
+
+    /* PRICING CLEAN GRID */
+    .pricing-clean-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin: 3.5rem 0 6rem;
+    }
+
+    .price-clean-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 28px;
+      padding: 3rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      position: relative;
+    }
+
+    .price-clean-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(168, 85, 247, 0.4);
+    }
+
+    .price-clean-card.featured-lp {
+      background: linear-gradient(180deg, rgba(16, 185, 129, 0.14) 0%, rgba(18, 18, 24, 0.95) 100%);
+      border: 2px solid #10B981;
+      box-shadow: 0 20px 50px rgba(16, 185, 129, 0.25);
+    }
+
+    @media (max-width: 1024px) {
+      .specialty-clean-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero-glow-bg"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" style="direction: ltr;">
+    <a href="index.html" class="brand-logo">
+      <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="white"/><path d="M8 10L16 22L24 10" stroke="black" stroke-width="3.5"/></svg>
+      VEXA
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="behance-case-studies.html" class="nav-link">Featured Stores 3D</a></li>
+      <li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="services.html" class="nav-link">Full Turnkey Service</a></li>
+      <li><a href="store-service-launch.html" class="nav-link" style="color:#C084FC; font-weight:700;">Store 5 Days 🚀</a></li>
+      <li><a href="pricing.html" class="nav-link">Pricing DZD ($100 LP)</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="store-service-launch.html" class="btn btn-primary" style="background:#10B981; color:#000; border:none; font-weight:900;">احجز متجرك (خلال 5 أيام) 🚀</a>
+    </div>
+  </nav>
+
+  <div class="main-wrap">
+
+    <!-- HERO SECTION WITH FULL TURNKEY SERVICE HEADLINE -->
+    <section class="container hero-clean-sec">
+      
+      <div class="brand-identity-badge">
+        <span class="badge-dot" style="background:#A855F7;"></span> VEXA STUDIO — حلول المتاجر وصفحات الهبوط المتكاملة 100%
+      </div>
+
+      <h1 class="hero-headline-identity">
+        نقدم لك الخدمة الكاملة من الألف إلى الياء <br>
+        <span class="text-gradient" style="background: linear-gradient(135deg, #FFF 0%, #C084FC 50%, #A855F7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">من التصميم الفاخر حتى إطلاق المتجر وحصد المبيعات</span>
+      </h1>
+
+      <p class="hero-subheadline-identity">
+        لا نقدم مجرد "تصميم واجهة"، بل نسلمك <strong>نظام متجر أو صفحة هبوط جاهزة ومكتملة 100%</strong> تشمل الربط لـ 58 ولاية، تتبع البيكسل الرباعي، كتابة النصوص التسويقية، وصفحة الشكر الرسمية.
+      </p>
+
+      <div style="display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; margin-bottom:2rem;">
+        <a href="contact.html" class="btn btn-primary" style="padding: 1.1rem 3rem; background:#A855F7; border:none; color:#FFF; font-weight:900; box-shadow:0 0 35px rgba(168,85,247,0.35);">
+          احجز الخدمة المتكاملة الآن ←
+        </a>
+        <a href="#full-turnkey-details" class="btn btn-secondary" style="padding: 1.1rem 2.5rem;">استكشف مكونات الخدمة 8 ↓</a>
+      </div>
+
+    </section>
+
+    <!-- FULL TURNKEY SERVICE 8 PILLARS SHOWCASE -->
+    <section class="container" id="full-turnkey-details">
+      <div class="turnkey-service-section">
+        
+        <div style="text-align:center; margin-bottom: 2.5rem;">
+          <span class="brand-identity-badge" style="border-color:#10B981; color:#34D399;"><span class="badge-dot" style="background:#10B981;"></span> الخدمة الكاملة 100% (Turnkey Solution)</span>
+          <h2 style="font-size: 2.6rem; font-weight: 900; color:#FFF; margin-top:0.8rem;">ماذا تتضمن الخدمة الكاملة من VEXA Studio؟</h2>
+          <p style="color:#A1A1AA; font-size:1.1rem; max-width:750px; margin:0.5rem auto 0;">نحن نتكفل بكل خطوة تقنية وتصميمية وتسويقية لتبدأ تجارتك فوراً بكامل جاهزيتها.</p>
+        </div>
+
+        <div class="turnkey-grid-8">
+          
+          <!-- Pillar 1 -->
+          <div class="turnkey-pillar-card">
+            <div class="pillar-icon-box">🎨</div>
+            <h3 style="color:#FFF; font-size:1.25rem; font-weight:800; margin-bottom:0.6rem;">01. التصميم الفاخر المخصص</h3>
+            <p style="color:#A1A1AA; font-size:0.9rem; line-height:1.7;">تصميم واجهة متجر/صفحة هبوط مخصصة فائقة السرعة على الجوال بلمسة استوديو عالمية.</p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="turnkey-pillar-card">
+            <div class="pillar-icon-box">🚚</div>
+            <h3 style="color:#FFF; font-size:1.25rem; font-weight:800; margin-bottom:0.6rem;">02. ربط 58 ولاية تلقائياً</h3>
+            <p style="color:#A1A1AA; font-size:0.9rem; line-height:1.7;">نماذج طلب مبسطة تضم القائمة الكاملة لـ 58 ولاية ببلدياتها وحساب أسعار الشحن تلقائياً.</p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="turnkey-pillar-card">
+            <div class="pillar-icon-box">📊</div>
+            <h3 style="color:#FFF; font-size:1.25rem; font-weight:800; margin-bottom:0.6rem;">03. تتبع البيكسل الرباعي</h3>
+            <p style="color:#A1A1AA; font-size:0.9rem; line-height:1.7;">ربط وتفعيل تتبع حوادث الشراء تلقائياً لـ Meta Pixel, TikTok Pixel, Snap & GA4.</p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="turnkey-pillar-card">
+            <div class="pillar-icon-box">✍️</div>
+            <h3 style="color:#FFF; font-size:1.25rem; font-weight:800; margin-bottom:0.6rem;">04. كتابة النصوص التسويقية</h3>
+            <p style="color:#A1A1AA; font-size:0.9rem; line-height:1.7;">صياغة نصوص مقنعة وهيكلة عروض الحزم والتوفير (Bundles) لجذب الزبون واقتناعه.</p>
+          </div>
+
+          <!-- Pillar 5 -->
+          <div class="turnkey-pillar-card">
+            <div class="pillar-icon-box">🖼️</div>
+            <h3 style="color:#FFF; font-size:1.25rem; font-weight:800; margin-bottom:0.6rem;">05. معالجة الصور وموك آب 3D</h3>
+            <p style="color:#A1A1AA; font-size:0.9rem; line-height:1.7;">تحسين صور المنتجات وإبرازها في أطر وموك آب ثلاثية الأبعاد تعطي ثقة مطلقة.</p>
+          </div>
+
+          <!-- Pillar 6 -->
+          <div class="turnkey-pillar-card">
+            <div class="pillar-icon-box">💵</div>
+            <h3 style="color:#FFF; font-size:1.25rem; font-weight:800; margin-bottom:0.6rem;">06. الدفع عند الاستلام COD</h3>
+            <p style="color:#A1A1AA; font-size:0.9rem; line-height:1.7;">تهيئة نظام الدفع عند الاستلام بالجزائر، أو مدى و Apple Pay لعملاء الخليج.</p>
+          </div>
+
+          <!-- Pillar 7 -->
+          <div class="turnkey-pillar-card">
+            <div class="pillar-icon-box">🎉</div>
+            <h3 style="color:#FFF; font-size:1.25rem; font-weight:800; margin-bottom:0.6rem;">07. صفحة الشكر الرسمية</h3>
+            <p style="color:#A1A1AA; font-size:0.9rem; line-height:1.7;">صفحة تأكيد الطلب مع ملخص الشحنة وإطلاق حدث الشراء للحملات الإعلانية.</p>
+          </div>
+
+          <!-- Pillar 8 -->
+          <div class="turnkey-pillar-card">
+            <div class="pillar-icon-box">🎓</div>
+            <h3 style="color:#FFF; font-size:1.25rem; font-weight:800; margin-bottom:0.6rem;">08. الشرح والتدريب والدعم</h3>
+            <p style="color:#A1A1AA; font-size:0.9rem; line-height:1.7;">تقديم فيديو تدريبي مبسط للعميل لكيفية إدارة المبيعات ومتابعتها بسهولة 24/7.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- REAL CLIENT STORES GRID (5 PROJECTS) -->
+    <section class="container" id="real-stores-section" style="padding-bottom: 4rem;">
+      <div style="text-align:center; margin-bottom: 2rem;">
+        <span class="brand-identity-badge" style="border-color:#A855F7; color:#C084FC;"><span class="badge-dot" style="background:#A855F7;"></span> أعمالنا المباشرة للعملاء</span>
+        <h2 style="font-size: 2.6rem; font-weight: 900; margin-top: 0.8rem;">معرض المتاجر وصفحات الهبوط الحقيقية</h2>
+      </div>
+
+      <div class="luxury-cards-grid">
+        
+        <!-- Store 01: Afghani Beauty UAE Landing Page -->
+        <div class="luxury-store-card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Afghani Beauty UAE">
+          </div>
+          <div class="card-content-body">
+            <span class="card-tag-pill" style="color:#D4A359;">🇦🇪 صفحة هبوط للإمارات (COD)</span>
+            <h3 class="card-title-head">زيت الأفغاني الأصلي — Landing Page</h3>
+            <p class="card-desc-text">صفحة هبوط مباشرة فائقة التحويل لبيع زيت الأفغاني بالإمارات مع نموذج طلب سريع وتتبع البكسل الرباعي.</p>
+            <a href="https://pipounostra1.github.io/afganibeautyae/landing.html" target="_blank" class="btn btn-primary" style="width:100%; text-align:center; background:#D4A359; color:#000; border:none; font-weight:900;">
+              معاينة صفحة الهبوط المباشرة ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Store 02: NAWA Beauty Real Store -->
+        <div class="luxury-store-card">
+          <div class="card-img-wrapper">
+            <img src="nawa-hero-real.png" alt="NAWA Beauty Store">
+          </div>
+          <div class="card-content-body">
+            <span class="card-tag-pill" style="color:#D4A359;">🌿 متجر إلكتروني بالسعودية</span>
+            <h3 class="card-title-head">نواة للجمال — NAWA Beauty Store</h3>
+            <p class="card-desc-text">صيدلية الجمال من الداخل بالعبوات السريرية الثلاث باللون الذهبي الفاخر والدفع عند الاستلام.</p>
+            <a href="https://nawabeauty.shop/" target="_blank" class="btn btn-primary" style="width:100%; text-align:center; background:#D4A359; color:#000; border:none; font-weight:900;">
+              معاينة متجر NAWA Beauty المباشر ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Store 03: NAMA Beauty SFDA Store -->
+        <div class="luxury-store-card">
+          <div class="card-img-wrapper">
+            <img src="nama-hero-real.png" alt="NAMA Beauty Store">
+          </div>
+          <div class="card-content-body">
+            <span class="card-tag-pill" style="color:#046A38;">💊 متجر مرخص SFDA السعودية</span>
+            <h3 class="card-title-head">ناما للجمال — NAMA Beauty Store</h3>
+            <p class="card-desc-text">علكات سريرية باللون الأخضر الزمردي بختم ترخيص SFDA الرسمي من هيئة الغذاء والدواء السعودية.</p>
+            <a href="https://namabeauty.shop/" target="_blank" class="btn btn-primary" style="width:100%; text-align:center; background:#046A38; color:#FFF; border:none; font-weight:900;">
+              معاينة متجر NAMA Beauty المباشر ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Store 04: ZAPHERA Caftan Pro -->
+        <div class="luxury-store-card">
+          <div class="card-img-wrapper">
+            <img src="https://pipounostra1.github.io/zaphera-coftan-pro/assets/caftan-alhambra.png" alt="ZAPHERA Caftan Pro">
+          </div>
+          <div class="card-content-body">
+            <span class="card-tag-pill" style="color:#D4A359;">👑 متجر أزياء جزائري (58 ولاية)</span>
+            <h3 class="card-title-head">زاڤيرا — ZAPHERA Caftan Pro</h3>
+            <p class="card-desc-text">استعراض التشكيلة الملكية لدار الأزياء الجزائرية الفاخرة: قفطان الحمراء والزاهية والكاراكو المخملي.</p>
+            <a href="https://pipounostra1.github.io/zaphera-coftan-pro/" target="_blank" class="btn btn-primary" style="width:100%; text-align:center; background:linear-gradient(135deg, #F3E5C8, #D4A359); color:#000; border:none; font-weight:900;">
+              معاينة متجر ZAPHERA المباشر ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Store 05: 7LLE Store -->
+        <div class="luxury-store-card">
+          <div class="card-img-wrapper">
+            <img src="https://cdn.salla.sa/WOXeN/cUqv6nHPxKwSO1MAGgswHDzPg96t1mfGqOkBtiP9.png" alt="7LLE Store">
+          </div>
+          <div class="card-content-body">
+            <span class="card-tag-pill" style="color:#EAAB48;">🛍️ متجر منصة سلة Salla</span>
+            <h3 class="card-title-head">حلّة ستور — 7LLE Salla Store</h3>
+            <p class="card-desc-text">المتجر الأفضل بالأعلى جودة والأقل سعراً بتصميم مخصص وسريع للسعودية والخليج.</p>
+            <a href="https://7lle.com/ar" target="_blank" class="btn btn-primary" style="width:100%; text-align:center; background:#EAAB48; color:#000; border:none; font-weight:900;">
+              معاينة متجر 7LLE المباشر ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRICING SECTION INCLUDING THE 100 USD LANDING PAGE -->
+    <section class="container" style="padding-bottom: 8rem;">
+      <div style="text-align:center; margin-bottom: 2.5rem;">
+        <span class="brand-identity-badge" style="border-color:#10B981; color:#34D399;"><span class="badge-dot" style="background:#10B981;"></span> باقة صفحة الهبوط بسعر 100$ فقط</span>
+        <h2 style="font-size: 2.5rem; font-weight: 900; margin-top: 0.8rem;">باقات الاستثمار والاستفادة</h2>
+      </div>
+
+      <div class="pricing-clean-grid">
+        
+        <!-- Tier 1: 100 USD LANDING PAGE -->
+        <div class="price-clean-card featured-lp">
+          <div style="position:absolute; top:-16px; right:24px; background:#10B981; color:#000; font-weight:900; font-size:0.8rem; padding:0.35rem 1rem; border-radius:20px;">
+            عرض 100$ دولار فقط 💵
+          </div>
+
+          <div>
+            <span class="brand-identity-badge" style="border-color:#10B981; color:#34D399;">صفحة هبوط فائقة التحويل</span>
+            <h3 style="font-size: 1.8rem; font-weight: 800; margin: 1rem 0 0.5rem; color:#FFF;">باقة صفحة الهبوط (High-Converting LP)</h3>
+            <p style="color: #A1A1AA; font-size: 0.95rem;">صفحة هبوط فائقة التحويل لإطلاق منتجاتك وإعلاناتك.</p>
+
+            <div style="font-size: 2.8rem; font-weight: 900; color: #10B981; margin: 1.5rem 0 0.2rem;">$100 USD</div>
+            <div style="color: #34D399; font-weight: 700; font-size: 0.95rem; margin-bottom: 1.5rem;">💰 تساوي 100 دولار (20,000 د.ج / زوج ملايين)</div>
+
+            <ul style="color:#FFF; line-height:2.2; list-style:none; padding:0; font-size:0.95rem;">
+              <li>✓ صفحة هبوط مخصصة عالية التحويل (Mobile First)</li>
+              <li>✓ نموذج طلب سريع COD لـ 58 ولاية</li>
+              <li>✓ ربط البكسل الرباعي (Meta, TikTok, Snap, GA4)</li>
+              <li>✓ تسليم خلال 3 إلى 5 أيام عمل فقط</li>
+            </ul>
+          </div>
+
+          <a href="contact.html" class="btn btn-primary" style="width:100%; text-align:center; margin-top:1.5rem; padding:0.9rem; background:#10B981; color:#000; border:none; font-weight:900;">احجز صفحة الهبوط بـ 100$ ←</a>
+        </div>
+
+        <!-- Tier 2: Full Store (350 USD / 120,000 DZD) -->
+        <div class="price-clean-card">
+          <div>
+            <span class="brand-identity-badge" style="border-color:#A855F7; color:#C084FC;">متجر متكامل 58 ولاية COD</span>
+            <h3 style="font-size: 1.8rem; font-weight: 800; margin: 1rem 0 0.5rem; color:#FFF;">باقة المتجر المتكامل (Scale Store)</h3>
+            <p style="color: #A1A1AA; font-size: 0.95rem;">متجر إلكتروني فاخر مخصص للتوسع ومضاعفة المبيعات.</p>
+
+            <div style="font-size: 2.8rem; font-weight: 900; color: #FFF; margin: 1.5rem 0 0.2rem;">$350 USD</div>
+            <div style="color: #10B981; font-weight: 700; font-size: 0.95rem; margin-bottom: 1.5rem;">💰 تساوي 350 دولار (120,000 د.ج / 12 مليون)</div>
+
+            <ul style="color:#CCC; line-height:2.2; list-style:none; padding:0; font-size:0.95rem;">
+              <li>✓ متجر كامل مخصص حتى 25 منتجاً وتصنيفاً</li>
+              <li>✓ نظام التوصيل والسداد لـ 58 ولاية تلقائياً</li>
+              <li>✓ سلة جانبية تفاعلية وعروض Upsell</li>
+              <li>✓ تسليم خلال 7 إلى 10 أيام عمل</li>
+            </ul>
+          </div>
+
+          <a href="contact.html" class="btn btn-secondary" style="width:100%; text-align:center; margin-top:1.5rem; padding:0.9rem;">اختر باقة المتجر المتكامل ←</a>
+        </div>
+
+        <!-- Tier 3: Enterprise (850 USD / 280,000 DZD) -->
+        <div class="price-clean-card">
+          <div>
+            <span class="brand-identity-badge" style="border-color:rgba(255,255,255,0.2); color:#A1A1AA;">المؤسسات والماركات الكبرى</span>
+            <h3 style="font-size: 1.8rem; font-weight: 800; margin: 1rem 0 0.5rem; color:#FFF;">باقة الريادة (Enterprise & GCC)</h3>
+            <p style="color: #A1A1AA; font-size: 0.95rem;">للماركات الكبرى والتوسع بين الجزائر والخليج.</p>
+
+            <div style="font-size: 2.8rem; font-weight: 900; color: #FFF; margin: 1.5rem 0 0.2rem;">$850 USD</div>
+            <div style="color: #10B981; font-weight: 700; font-size: 0.95rem; margin-bottom: 1.5rem;">💰 تساوي 850 دولار (280,000 د.ج / 28 مليون)</div>
+
+            <ul style="color:#CCC; line-height:2.2; list-style:none; padding:0; font-size:0.95rem;">
+              <li>✓ متجر متعدد اللغات والعملات (عربي/فرنسي/إنجليزي)</li>
+              <li>✓ تهيئة الشحن للخليج (السعودية والإمارات)</li>
+              <li>✓ 30 أصل إعلاني عالي الأداء للماركة</li>
+              <li>✓ دعم وتحديثات VIP أولوية لمدة سنة</li>
+            </ul>
+          </div>
+
+          <a href="contact.html" class="btn btn-secondary" style="width:100%; text-align:center; margin-top:1.5rem; padding:0.9rem;">تواصل مع فريق الريادة ←</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="container" style="padding-bottom: 8rem;">
+      <div style="background: linear-gradient(135deg, rgba(168,85,247,0.14) 0%, rgba(18,18,24,0.95) 100%); border: 1px solid rgba(168,85,247,0.3); border-radius: 36px; padding: 4.5rem 3rem; text-align: center;">
+        <h2 style="font-size: 2.8rem; font-weight: 900; color: #FFF; margin-bottom: 1rem;">جاهز لبناء الخدمة المتكاملة 100% مع VEXA Studio؟</h2>
+        <p style="color: #A1A1AA; font-size: 1.15rem; margin: 0 auto 2.5rem; max-width: 750px;">
+          من التصميم، كتابة النصوص، الربط التلقائي لـ 58 ولاية، وحتى تتبع البيكسل الرباعي والتدريب الفوري.
+        </p>
+
+        <div style="display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-primary" style="padding: 1.1rem 3rem; background:#A855F7; border:none; color:#FFF; font-weight:900; box-shadow:0 0 35px rgba(168,85,247,0.4);">
+            ابدأ الخدمة الشاملة الآن ←
+          </a>
+          <a href="projects.html" class="btn btn-secondary" style="padding: 1.1rem 2.5rem;">تصفح المشاريع المباشرة ↗</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 VEXA Studio. جميع الحقوق محفوظة.</div>
+        <div>VEXA Studio — 100% Full Turnkey E-Commerce Solution Package</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Floating WhatsApp Widget -->
+  <a href="https://wa.me/213669070092?text=مرحباً%20VEXA!%20أريد%20الاستفسار%20عن%20خدمة%20إنشاء%20المتجر%20الإلكتروني%20ونظام%20الإدارة" target="_blank" class="whatsapp-float-btn" title="تواصل معنا عبر واتساب">
+    <svg viewBox="0 0 32 32" width="26" height="26" fill="white">
+      <path d="M16 2a14 14 0 0 0-12 21.24L2 30l6.93-1.82A14 14 0 1 0 16 2zm0 25.6a11.55 11.55 0 0 1-5.89-1.61l-.42-.25-4.38 1.15 1.17-4.27-.27-.44A11.57 11.57 0 1 1 16 27.6zm6.34-8.67c-.35-.18-2.07-1-2.39-1.12s-.55-.18-.79.18-.92 1.12-1.13 1.36-.42.27-.77.1a9.7 9.7 0 0 1-2.85-1.76 10.7 10.7 0 0 1-1.98-2.47c-.2-.35-.02-.54.15-.71s.35-.41.52-.62a2.33 2.33 0 0 0 .35-.58.64.64 0 0 0-.03-.61c-.08-.18-.79-1.9-1.08-2.61s-.58-.6-.79-.61h-.68a1.31 1.31 0 0 0-.95.44A4 4 0 0 0 8.5 13a6.93 6.93 0 0 0 1.45 3.67 15.82 15.82 0 0 0 6.06 5.34c3.6 1.43 3.6 1 4.24.9.8-.1 2.07-.85 2.36-1.67a2.89 2.89 0 0 0 .2-1.67c-.07-.12-.28-.2-.63-.37z"/>
+    </svg>
+    <span>تواصل عبر واتساب</span>
+  </a>
+
+  <style>
+    .whatsapp-float-btn {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      background: #25D366;
+      color: #FFFFFF;
+      padding: 0.85rem 1.4rem;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      z-index: 9999;
+      transition: all 0.3s ease;
+    }
+    .whatsapp-float-btn:hover {
+      transform: scale(1.06) translateY(-2px);
+      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+      background: #20BA56;
+    }
+  </style>
+</body>
+</html>
