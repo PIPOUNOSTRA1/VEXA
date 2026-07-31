@@ -157,8 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Bind project cards & links to open in-site modal
-  document.querySelectorAll('.project-card, [data-live-url]').forEach(card => {
+  // Bind elements with data-live-modal="true" to open in-site iframe modal
+  document.querySelectorAll('[data-live-modal="true"]').forEach(card => {
     card.addEventListener('click', function(e) {
       const liveUrl = this.getAttribute('data-live-url') || this.getAttribute('href');
       if (liveUrl && !liveUrl.startsWith('#')) {

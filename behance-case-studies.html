@@ -717,10 +717,17 @@
                 <a href="https://7lle.com/ar" target="_blank" class="badge" style="border-color:#EAAB48; color:#EAAB48; text-decoration:none;">⚡ 7lle.com ↗</a>
               </div>
             </div>
-          </div>
-        `;
       }
     }
+
+    // Check URL parameters to auto-load selected project
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const proj = urlParams.get('project');
+      if (proj) {
+        switchStudioView(proj);
+      }
+    });
   </script>
   <!-- Ultra-Luxury Mobile Glass Drawer Overlay -->
   <div class="mobile-drawer-overlay" dir="rtl">
