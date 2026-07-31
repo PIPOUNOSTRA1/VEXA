@@ -71,4 +71,101 @@ document.addEventListener('DOMContentLoaded', () => {
       lastScrollY = currentScrollY;
     }, { passive: true });
   }
+
+  // In-Site Interactive Project Live Modal System
+  function createProjectModal() {
+    if (document.getElementById('in-site-project-modal')) return;
+
+    const modalHTML = `
+      <div id="in-site-project-modal" class="project-modal-backdrop" dir="rtl">
+        <div class="project-modal-topbar">
+          <div class="project-modal-title-box">
+            <span style="font-size:1.2rem;">⚡</span>
+            <div style="display:flex; flex-direction:column;">
+              <span id="modal-project-title" style="color:#FFF; font-weight:800; font-size:1.05rem;">معاينة حية للمتجر</span>
+              <span style="color:#10B981; font-size:0.78rem; font-weight:700;">🟢 العرض الحي المباشر داخل VEXA Studio</span>
+            </div>
+          </div>
+
+          <div class="project-modal-device-controls">
+            <button class="device-btn active" id="modal-btn-desktop">🖥️ شاشة حاسوب</button>
+            <button class="device-btn" id="modal-btn-mobile">📱 جوال هاتف</button>
+          </div>
+
+          <div class="project-modal-actions">
+            <a id="modal-external-link" href="#" target="_blank" class="btn" style="padding:0.45rem 1rem; font-size:0.82rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:#FFF; border-radius:50px; text-decoration:none;">
+              فتح في نافذة جديدة ↗
+            </a>
+            <button class="project-modal-close-btn" id="modal-close-btn" aria-label="إغلاق النافذة">✕</button>
+          </div>
+        </div>
+
+        <div class="project-modal-iframe-wrap">
+          <iframe id="modal-iframe-frame" class="project-modal-iframe-frame view-desktop" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    const modal = document.getElementById('in-site-project-modal');
+    const iframe = document.getElementById('modal-iframe-frame');
+    const closeBtn = document.getElementById('modal-close-btn');
+    const btnDesktop = document.getElementById('modal-btn-desktop');
+    const btnMobile = document.getElementById('modal-btn-mobile');
+
+    closeBtn.addEventListener('click', closeProjectModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeProjectModal();
+    });
+
+    btnDesktop.addEventListener('click', () => {
+      btnDesktop.classList.add('active');
+      btnMobile.classList.remove('active');
+      iframe.className = 'project-modal-iframe-frame view-desktop';
+    });
+
+    btnMobile.addEventListener('click', () => {
+      btnMobile.classList.add('active');
+      btnDesktop.classList.remove('active');
+      iframe.className = 'project-modal-iframe-frame view-mobile';
+    });
+  }
+
+  function openProjectModal(url, title) {
+    createProjectModal();
+    const modal = document.getElementById('in-site-project-modal');
+    const iframe = document.getElementById('modal-iframe-frame');
+    const titleEl = document.getElementById('modal-project-title');
+    const externalLink = document.getElementById('modal-external-link');
+
+    iframe.src = url;
+    titleEl.textContent = title || 'معاينة حية للمشروع';
+    externalLink.href = url;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProjectModal() {
+    const modal = document.getElementById('in-site-project-modal');
+    const iframe = document.getElementById('modal-iframe-frame');
+    if (modal) {
+      modal.classList.remove('active');
+      iframe.src = '';
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Bind project cards & links to open in-site modal
+  document.querySelectorAll('.project-card, [data-live-url]').forEach(card => {
+    card.addEventListener('click', function(e) {
+      const liveUrl = this.getAttribute('data-live-url') || this.getAttribute('href');
+      if (liveUrl && !liveUrl.startsWith('#')) {
+        e.preventDefault();
+        const projectTitle = this.querySelector('.project-title')?.textContent || 'مشروع VEXA Studio الحي';
+        openProjectModal(liveUrl, projectTitle);
+      }
+    });
+  });
 });
