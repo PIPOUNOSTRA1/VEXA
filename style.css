@@ -1040,67 +1040,45 @@ h1, h2, h3, h4, h5, h6 {
   .input-field, .btn {
     min-height: 48px;
   }
-  .whatsapp-float-btn {
-    bottom: 80px !important;
-    left: 16px;
-    padding: 0.65rem 1rem;
-    font-size: 0.82rem;
-  }
+/* Floating WhatsApp Icon Only Widget */
+.whatsapp-float-btn {
+  position: fixed !important;
+  bottom: 24px !important;
+  left: 24px !important;
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 50% !important;
+  background: #25D366 !important;
+  color: #FFFFFF !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.45) !important;
+  z-index: 9999 !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-decoration: none !important;
 }
 
-/* Mobile Sticky Bottom CTA Bar */
+.whatsapp-float-btn span {
+  display: none !important;
+}
+
+.whatsapp-float-btn svg {
+  width: 32px !important;
+  height: 32px !important;
+  fill: #FFFFFF !important;
+}
+
+.whatsapp-float-btn:hover {
+  transform: scale(1.12) translateY(-3px) !important;
+  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.7) !important;
+  background: #20BA56 !important;
+}
+
+/* Hide Mobile Sticky Bar to show ONLY WhatsApp Icon at bottom */
 .mobile-sticky-cta {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .mobile-sticky-cta {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(7, 7, 11, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 0.65rem 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-    z-index: 9998;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.9);
-  }
-
-  .mobile-sticky-cta .cta-btn-main {
-    flex: 1;
-    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-    color: #FFFFFF;
-    font-weight: 900;
-    font-size: 0.9rem;
-    padding: 0.8rem 1rem;
-    border-radius: 12px;
-    text-decoration: none;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-  }
-
-  .mobile-sticky-cta .cta-btn-wa {
-    background: #25D366;
-    color: #FFF;
-    padding: 0.8rem 1rem;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 0.85rem;
-    gap: 0.4rem;
-  }
+  display: none !important;
 }
 
 /* Mobile Glass Drawer Overlay */
