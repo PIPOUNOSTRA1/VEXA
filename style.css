@@ -1734,9 +1734,133 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
-  .scrolly-3d-stage { height: 380px; transform: scale(0.82); }
-  .scrolly-progress-hud { top: 75px; }
-  .scene-headline { font-size: 1.6rem; }
-  .scene-desc { font-size: 0.95rem; }
+  .vexa-scrolly-section {
+    height: 520vh; /* Smooth room for touch scrolling */
+  }
+
+  .scrolly-progress-hud {
+    top: 70px;
+    width: 90%;
+  }
+
+  .scrolly-step-badge {
+    font-size: 0.72rem;
+    padding: 0.35rem 1rem;
+    white-space: nowrap;
+  }
+
+  .scrolly-hud-bar {
+    width: 160px;
+  }
+
+  .scrolly-3d-stage {
+    width: 95vw;
+    height: 360px;
+    margin-top: -30px;
+  }
+
+  .store-layer {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .ui-title {
+    font-size: 1.25rem;
+    margin: 0.25rem 0 0.6rem;
+  }
+
+  .ui-hero-banner {
+    padding: 1rem;
+  }
+
+  .ui-btn-glow {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.82rem;
+  }
+
+  .asset-img1 {
+    width: 140px;
+    height: 160px;
+    right: 10px;
+    top: 30px;
+  }
+
+  .asset-img2 {
+    width: 130px;
+    height: 140px;
+    left: 10px;
+    bottom: 20px;
+  }
+
+  .layer-marketing {
+    padding-right: 0;
+    align-items: center;
+  }
+
+  .mkt-pill {
+    padding: 0.55rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .pixel-node {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.72rem;
+  }
+
+  .node-meta { top: 20px; left: 10px; }
+  .node-tiktok { top: 30px; right: 10px; }
+  .node-snap { bottom: 30px; left: 20px; }
+  .node-ga4 { bottom: 20px; right: 10px; }
+
+  .cod-form-box {
+    padding: 1rem;
+    max-width: 290px;
+  }
+
+  .cod-title {
+    font-size: 0.92rem;
+  }
+
+  .cod-field {
+    font-size: 0.78rem;
+    padding: 0.45rem 0.75rem;
+  }
+
+  .dash-chart-card {
+    padding: 1.2rem;
+    width: 280px;
+  }
+
+  .dash-val {
+    font-size: 1.7rem;
+  }
+
+  .scrolly-text-container {
+    bottom: 25px;
+    width: 95%;
+  }
+
+  .scene-step-tag {
+    font-size: 0.75rem;
+  }
+
+  .scene-headline {
+    font-size: 1.35rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .scene-desc {
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrolly-3d-stage {
+    margin-top: -50px;
+  }
+  .scrolly-text-container {
+    bottom: 20px;
+  }
 }
 

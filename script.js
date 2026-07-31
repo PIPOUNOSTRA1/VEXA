@@ -226,36 +226,42 @@ document.addEventListener('DOMContentLoaded', () => {
       const sceneIndex = Math.min(8, Math.floor(progress * 8.99));
       updateSceneTexts(sceneIndex);
 
+      const isMobile = window.innerWidth <= 768;
+      const baseScale = isMobile ? 0.68 : 0.95;
+
       // Scene 01 to 03: Morphing & Rotation
       if (progress < 0.22) {
-        scrollyCube.style.transform = `rotateX(${15 - progress * 40}deg) rotateY(${progress * 60}deg) scale(${0.85 + progress * 0.3})`;
+        scrollyCube.style.transform = `rotateX(${15 - progress * 40}deg) rotateY(${progress * 60}deg) scale(${baseScale * (0.85 + progress * 0.3)})`;
         if (layerWireframe) layerWireframe.style.opacity = 1;
         if (layerUi) layerUi.style.opacity = progress * 4;
         if (layerAssets) layerAssets.style.opacity = 0;
       } else if (progress >= 0.22 && progress < 0.44) {
         // Scene 03 & 04: EXPLODED VIEW LAYERS!
         const explodedProgress = (progress - 0.22) / 0.22;
-        scrollyCube.style.transform = `rotateX(${25 + explodedProgress * 20}deg) rotateY(${-15 - explodedProgress * 30}deg) scale(0.9)`;
+        const zShift = isMobile ? 0.5 : 1;
+        scrollyCube.style.transform = `rotateX(${25 + explodedProgress * 20}deg) rotateY(${-15 - explodedProgress * 30}deg) scale(${baseScale})`;
         
         // Explode Layers in 3D Space!
-        if (layerWireframe) layerWireframe.style.transform = `translateZ(${-180 * explodedProgress}px) translateY(${40 * explodedProgress}px)`;
-        if (layerUi) layerUi.style.transform = `translateZ(${-60 * explodedProgress}px)`;
-        if (layerAssets) { layerAssets.style.opacity = 1; layerAssets.style.transform = `translateZ(${80 * explodedProgress}px)`; }
-        if (layerMkt) { layerMkt.style.opacity = explodedProgress; layerMkt.style.transform = `translateZ(${160 * explodedProgress}px)`; }
+        if (layerWireframe) layerWireframe.style.transform = `translateZ(${-180 * explodedProgress * zShift}px) translateY(${40 * explodedProgress}px)`;
+        if (layerUi) layerUi.style.transform = `translateZ(${-60 * explodedProgress * zShift}px)`;
+        if (layerAssets) { layerAssets.style.opacity = 1; layerAssets.style.transform = `translateZ(${80 * explodedProgress * zShift}px)`; }
+        if (layerMkt) { layerMkt.style.opacity = explodedProgress; layerMkt.style.transform = `translateZ(${140 * explodedProgress * zShift}px)`; }
       } else if (progress >= 0.44 && progress < 0.66) {
         // Scene 05 & 06: Pixels & Nodes Active
         const pixelProgress = (progress - 0.44) / 0.22;
-        scrollyCube.style.transform = `rotateX(15deg) rotateY(${pixelProgress * 40}deg) scale(0.95)`;
-        if (layerPixels) { layerPixels.style.opacity = 1; layerPixels.style.transform = `translateZ(${220 * pixelProgress}px)`; }
+        const zShift = isMobile ? 0.5 : 1;
+        scrollyCube.style.transform = `rotateX(15deg) rotateY(${pixelProgress * 40}deg) scale(${baseScale})`;
+        if (layerPixels) { layerPixels.style.opacity = 1; layerPixels.style.transform = `translateZ(${180 * pixelProgress * zShift}px)`; }
       } else if (progress >= 0.66 && progress < 0.88) {
         // Scene 07 & 08: COD & Analytics Charts
         const analyticsProgress = (progress - 0.66) / 0.22;
-        scrollyCube.style.transform = `rotateX(${-10 + analyticsProgress * 20}deg) rotateY(0deg) scale(1)`;
-        if (layerCod) { layerCod.style.opacity = 1; layerCod.style.transform = `translateZ(${140 * analyticsProgress}px)`; }
-        if (layerAnalytics) { layerAnalytics.style.opacity = analyticsProgress; layerAnalytics.style.transform = `translateZ(${260 * analyticsProgress}px)`; }
+        const zShift = isMobile ? 0.5 : 1;
+        scrollyCube.style.transform = `rotateX(${-10 + analyticsProgress * 20}deg) rotateY(0deg) scale(${baseScale * 1.05})`;
+        if (layerCod) { layerCod.style.opacity = 1; layerCod.style.transform = `translateZ(${120 * analyticsProgress * zShift}px)`; }
+        if (layerAnalytics) { layerAnalytics.style.opacity = analyticsProgress; layerAnalytics.style.transform = `translateZ(${200 * analyticsProgress * zShift}px)`; }
       } else {
         // Scene 09: Re-assembly back into master complete store!
-        scrollyCube.style.transform = `rotateX(0deg) rotateY(0deg) scale(1.05)`;
+        scrollyCube.style.transform = `rotateX(0deg) rotateY(0deg) scale(${baseScale * 1.1})`;
         
         [layerWireframe, layerUi, layerAssets, layerMkt, layerPixels, layerCod, layerAnalytics].forEach(l => {
           if (l) {
@@ -267,6 +273,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', handleScrolly, { passive: true });
+    window.addEventListener('touchmove', handleScrolly, { passive: true });
+    window.addEventListener('resize', handleScrolly, { passive: true });
     handleScrolly();
   }
 });
